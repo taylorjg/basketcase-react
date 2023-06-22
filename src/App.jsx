@@ -1,22 +1,18 @@
-import { useEffect, useRef, useState } from "react";
-import axios from "axios";
-
 import { Product } from "./Product";
+import { useSearch } from "./use-search";
 
 export const App = () => {
-  const mountedRef = useRef(false);
-  const [products, setProducts] = useState([]);
+  const searchResponse = useSearch();
 
-  useEffect(() => {
-    if (mountedRef.current) return;
-    mountedRef.current = true;
-    const doQuery = async () => {
-      const url = `https://rqnfyvya7e.execute-api.us-east-1.amazonaws.com/api/search`;
-      const response = await axios.post(url, {});
-      setProducts(response.data.results.products);
-    };
-    doQuery();
-  }, []);
+  if (searchResponse.isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (searchResponse.isError) {
+    return <div>ERROR!</div>;
+  }
+
+  const { products } = searchResponse.data;
 
   return (
     <div>
