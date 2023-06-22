@@ -2,7 +2,7 @@ import { Product } from "./Product";
 import { useSearch } from "./use-search";
 
 export const App = () => {
-  const searchResponse = useSearch();
+  const searchResponse = useSearch({ searchText: "candy" });
 
   if (searchResponse.isLoading) {
     return <div>Loading...</div>;

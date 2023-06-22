@@ -1,17 +1,17 @@
 import axios from "axios";
 import { useQuery } from "react-query";
 
-const SERVERLESS_BASE_URL =
-  "https://rqnfyvya7e.execute-api.us-east-1.amazonaws.com";
+axios.defaults.baseURL = "https://rqnfyvya7e.execute-api.us-east-1.amazonaws.com";
 
-const doSearch = async (searchOptions = {}) => {
-  const url = `${SERVERLESS_BASE_URL}/api/search`;
+const doSearch = async (options) => {
+  const [, searchOptions] = options.queryKey;
+  const url = "/api/search";
   const response = await axios.post(url, searchOptions);
   const facets = response.data.facets;
   const products = response.data.results.products;
   return { products, facets };
 };
 
-export const useSearch = () => {
-  return useQuery("search", doSearch);
+export const useSearch = (searchOptions) => {
+  return useQuery(["search", searchOptions], doSearch);
 };
