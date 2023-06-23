@@ -5,6 +5,8 @@ which is driven by an Elasticsearch query on the backend.
 
 The frontend is deployed to gh-pages and the backend is deployed to AWS using Serverless Framework.
 
+*NOTE:* :construction: I have only just started work on this app - much more to come :construction:
+
 ## History
 
 I initially wrote this as an AngularJS 1.x app back in 2017. The code is available in [this repo](https://github.com/taylorjg/BasketCase). Originally, the backend was an Express app and the whole thing was deployed to Heroku. Then, in 2022, Heroku removed all their free tier offerings so I moved the app to Render. The spin-up time seemed to be longer on Render than Heroku so I repackaged the backend code as
