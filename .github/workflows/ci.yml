@@ -34,20 +34,12 @@ jobs:
 
   deploy:
     name: Deploy to gh-pages
+    if: github.ref_type == 'tag'
     needs: [run-unit-tests, run-e2e-tests]
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: troubleshooting
-        run: |
-          echo "github.event_name: ${{ github.event_name }}"
-          echo "github.event_path: ${{ github.event_path }}"
-          echo "github.path: ${{ github.path }}"
-          echo "github.ref: ${{ github.ref }}"
-          echo "github.ref_name: ${{ github.ref_name }}"
-          echo "github.ref_type: ${{ github.ref_type }}"
-          echo "github.event: ${{ github.event }}"
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -56,13 +48,7 @@ jobs:
         run: npm clean-install
       - name: Build
         run: npm run build
-      - uses: actions-ecosystem/action-regex-match@v2
-        id: regex-match
-        with:
-          text: ${{ github.event.head_commit.message }}
-          regex: '^\d+\.\d+\.\d+$'
       - uses: peaceiris/actions-gh-pages@v3
-        if: ${{ steps.regex-match.outputs.match != '' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
