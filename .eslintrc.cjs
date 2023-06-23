@@ -11,6 +11,7 @@ module.exports = {
     "plugin:prettier/recommended",
     "plugin:vitest/recommended",
     "plugin:vitest-globals/recommended",
+    "plugin:cypress/recommended",
   ],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
@@ -18,4 +19,12 @@ module.exports = {
   rules: {
     "react-refresh/only-export-components": "warn",
   },
+  overrides: [
+    {
+      files: ["*.cy.js"],
+      rules: {
+        "vitest/expect-expect": "off",
+      },
+    },
+  ],
 };

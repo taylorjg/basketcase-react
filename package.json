@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest run",
+    "test:cypress": "cypress run",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build",
@@ -27,14 +28,17 @@
     "react-query": "^3.39.3"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^9.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
+    "cypress": "^12.15.0",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",

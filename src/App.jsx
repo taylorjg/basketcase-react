@@ -6,6 +6,7 @@ import { Version } from "./Version";
 import { useSearch, useLazySearch } from "./use-search";
 
 export const App = () => {
+  const [searchOptions] = useState({});
   const [products, setProducts] = useState([]);
 
   const onSearchSuccess = (data) => {
@@ -22,7 +23,7 @@ export const App = () => {
   };
 
   // Initial query
-  const initialSearchResponse = useSearch({ searchText: "candy" }, options);
+  const initialSearchResponse = useSearch(searchOptions, options);
 
   // On-demand queries
   const { search } = useLazySearch(options);
@@ -36,7 +37,8 @@ export const App = () => {
   }
 
   const onRefresh = () => {
-    search({ searchText: "aeg" });
+    const searchOptionsExampleWithSearchText = { searchText: "aeg" };
+    search(searchOptionsExampleWithSearchText);
   };
 
   return (
