@@ -1,0 +1,15 @@
+name: CI/CD
+on: push
+
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.16"
+      - name: Clean install
+        run: npm clean-install
+      - name: Run unit tests
+        run: npm test
