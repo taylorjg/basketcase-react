@@ -30,7 +30,6 @@ const makeQueryOptions = (options) => {
 
 export const useSearch = (searchOptions, options) => {
   const queryOptions = makeQueryOptions(options);
-  console.log(queryOptions);
   return useQuery(["search", searchOptions], doSearch, queryOptions);
 };
 

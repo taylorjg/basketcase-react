@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@mui/material";
 
 import { Product } from "./Product";
+import { Version } from "./Version";
 import { useSearch, useLazySearch } from "./use-search";
 
 export const App = () => {
@@ -40,6 +41,7 @@ export const App = () => {
 
   return (
     <div>
+      <Version />
       <Button onClick={onRefresh}>Refresh</Button>
       {products.map((product) => (
         <Product key={product.Code} product={product} />
