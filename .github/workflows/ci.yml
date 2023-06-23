@@ -3,6 +3,7 @@ on: push
 
 jobs:
   run-unit-tests:
+    name: Run Unit Tests (Vitest)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,6 +16,7 @@ jobs:
         run: npm test
 
   run-e2e-tests:
+    name: Run End-to-End Tests (Cypress)
     runs-on: ubuntu-latest
     container: cypress/browsers:node16.17.0-chrome106
     steps:
