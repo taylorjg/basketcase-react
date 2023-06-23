@@ -31,3 +31,29 @@ jobs:
           # The "wait-on" value needs to match "baseUrl" in cypress.config.js.
           wait-on: "http://localhost:5174/basketcase-react"
           browser: chrome
+
+  deploy:
+    name: Deploy to gh-pages
+    needs: [run-unit-tests, run-e2e-tests]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "18.16"
+      - name: Clean install
+        run: npm clean-install
+      - name: Build
+        run: npm run build
+      - uses: actions-ecosystem/action-regex-match@v2
+        id: regex-match
+        with:
+          text: ${{ github.event.head_commit.message }}
+          regex: '^\d+\.\d+\.\d+$'
+      - uses: peaceiris/actions-gh-pages@v3
+        if: ${{ (github.ref == 'refs/heads/main') && (steps.regex-match.outputs.match != '') }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
