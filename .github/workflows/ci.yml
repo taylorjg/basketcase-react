@@ -13,3 +13,19 @@ jobs:
         run: npm clean-install
       - name: Run unit tests
         run: npm test
+
+  run-e2e-tests:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.17.0-chrome106
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cypress-io/github-action@v5
+        with:
+          build: npm run build
+          # We need to create a symbolic link in the dist folder because
+          # of the "base" setting in vite.config.js:
+          #   base: "/basketcase-react"
+          start: ln -s . dist/basketcase-react, npx serve dist -p 5174
+          # The "wait-on" value needs to match "baseUrl" in cypress.config.js.
+          wait-on: "http://localhost:5174/basketcase-react"
+          browser: chrome

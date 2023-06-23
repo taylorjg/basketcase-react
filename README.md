@@ -24,8 +24,9 @@ to gh-pages where it is always available.
 * Vite
 * Material UI
 * react-query
-* GitHub Actions
 * Vitest + React Testing Library + msw
+* Cypress + Cypress Testing Library
+* GitHub Actions
 
 ## Backend
 
