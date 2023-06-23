@@ -1,4 +1,4 @@
-import { StyledVersion } from "./version.styles";
+import { StyledVersion } from "./Version.styles";
 import packageJson from "../package.json";
 
 export const Version = () => {
