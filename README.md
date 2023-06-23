@@ -1,3 +1,5 @@
+[![CI/CD](https://github.com/taylorjg/basketcase-react/actions/workflows/ci.yml/badge.svg)](https://github.com/taylorjg/basketcase-react/actions/workflows/ci.yml)
+
 # Description
 
 This is a toy/mock online store app. It's main point of interest is the faceted navigation
