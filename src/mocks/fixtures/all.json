@@ -1,0 +1,960 @@
+{
+  "results": {
+    "total": {
+      "value": 60,
+      "relation": "eq"
+    },
+    "products": [
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WM5122S 5Kg Washing Machine with 1200 rpm - Silver",
+        "Price": 179,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wm5122s_si_01_m_p.jpg",
+        "ReviewCount": 82,
+        "Code": "WM5122S_SI",
+        "Colour": "Silver"
+      },
+      {
+        "Brand": "Electra",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Electra W1044CF1W 6Kg Washing Machine with 1000 rpm - White",
+        "Price": 179,
+        "RatingValue": 4.4,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/electra_w1044cf1w_wh_01_m_p.jpg",
+        "ReviewCount": 17,
+        "Code": "W1044CF1W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Indesit",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Indesit My Time EWD81482W 8Kg Washing Machine with 1400 rpm - White",
+        "Price": 199,
+        "RatingValue": 4.6,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/indesit_ewd81482w_wh_01_m_p.jpg",
+        "ReviewCount": 159,
+        "Code": "EWD81482W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WM5102W 5Kg Washing Machine with 1000 rpm - White",
+        "Price": 199,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wm5102w_wh_01_m_p.jpg",
+        "ReviewCount": 313,
+        "Code": "WM5102W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint Aquarius WMAQF621P 6Kg Washing Machine with 1200 rpm - White",
+        "Price": 207,
+        "RatingValue": 4.4,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_wmaqf621p_wh_01_m_p.jpg",
+        "ReviewCount": 24,
+        "Code": "WMAQF621P_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WMB71543W 7Kg Washing Machine with 1500 rpm - White",
+        "Price": 219,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmb71543w_wh_01_m_p.jpg",
+        "ReviewCount": 283,
+        "Code": "WMB71543W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WMB61432B 6Kg Washing Machine with 1400 rpm - Black",
+        "Price": 237,
+        "RatingValue": 4.8,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmb61432b_bk_01_m_p.jpg",
+        "ReviewCount": 15,
+        "Code": "WMB61432B_BK",
+        "Colour": "Black"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WMB91233LW 9Kg Washing Machine with 1200 rpm - White",
+        "Price": 239,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmb91233lw_wh_01_m_p.jpg",
+        "ReviewCount": 189,
+        "Code": "WMB91233LW_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint Extra WMXTF742P 7Kg Washing Machine with 1400 rpm - White",
+        "Price": 249,
+        "RatingValue": 4.7,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_wmxtf742p_wh_01_m_p.jpg",
+        "ReviewCount": 133,
+        "Code": "WMXTF742P_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint WMAO743P 7Kg Washing Machine with 1400 rpm - White",
+        "Price": 249,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_wmao742p_wh_01_m_p.jpg",
+        "ReviewCount": 101,
+        "Code": "WMAO743P_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Indesit",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Indesit Innex BWD71453SUK 7Kg Washing Machine with 1400 rpm - Silver",
+        "Price": 249,
+        "RatingValue": 0,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/bwd71453s_si_indesit_washer_01_m_p.jpg",
+        "ReviewCount": 0,
+        "Code": "BWD71453SUK_SI",
+        "Colour": "Silver"
+      },
+      {
+        "Brand": "Candy",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Candy Grand'O Vita GV149T3W 9Kg Washing Machine with 1400 rpm - White",
+        "Price": 249,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/candy_gv149tw_wh_01_m_p.jpg",
+        "ReviewCount": 68,
+        "Code": "GV149T3W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hoover",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hoover One Touch HL1482D3 8Kg Washing Machine with 1400 rpm - White",
+        "Price": 249,
+        "RatingValue": 4.4,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hoover_hl1482d3_wh_01_m_p.jpg",
+        "ReviewCount": 14,
+        "Code": "HL1482D3_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WMB81243LW 8Kg Washing Machine with 1200 rpm - White",
+        "Price": 249,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmb81243lw_wh_01_m_p.jpg",
+        "ReviewCount": 78,
+        "Code": "WMB81243LW_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WMB71233S 7Kg Washing Machine with 1200 rpm - Silver",
+        "Price": 250,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmb71233s_si_01_m_p.jpg",
+        "ReviewCount": 5,
+        "Code": "WMB71233S_SI",
+        "Colour": "Silver"
+      },
+      {
+        "Brand": "Hoover",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hoover Dynamic Next DXCE49W3 9Kg Washing Machine with 1400 rpm - White",
+        "Price": 259,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/dxce49w3_wh_hoover_washer_01_m_p.jpg",
+        "ReviewCount": 53,
+        "Code": "DXCE49W3_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Zanussi",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Zanussi Lindo100 ZWF81240W 8Kg Washing Machine with 1200 rpm - White",
+        "Price": 259,
+        "RatingValue": 4.5,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/zanussi_zwf81240w_wh_01_m_p.jpg",
+        "ReviewCount": 4,
+        "Code": "ZWF81240W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WMB91243LB 9Kg Washing Machine with 1200 rpm - Black",
+        "Price": 267,
+        "RatingValue": 5,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmb91243lb_bk_01_m_p.jpg",
+        "ReviewCount": 10,
+        "Code": "WMB91243LB_BK",
+        "Colour": "Black"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Built In",
+        "FullTitle": "Beko WMI651241 Integrated 6.5Kg Washing Machine with 1200 rpm",
+        "Price": 269,
+        "RatingValue": 4.4,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmi651241_wh_01_m_p.jpg",
+        "ReviewCount": 62,
+        "Code": "WMI651241_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 2 WAB24161GB 6Kg Washing Machine with 1200 rpm - White",
+        "Price": 269,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/bosch_wab24161gb_wh_01_m_p.jpg",
+        "ReviewCount": 12,
+        "Code": "WAB24161GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint Extra WMXTF742K 7Kg Washing Machine with 1400 rpm - Black",
+        "Price": 270,
+        "RatingValue": 4.7,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_wmxtf742k_bk_01_m_p.jpg",
+        "ReviewCount": 14,
+        "Code": "WMXTF742K_BK",
+        "Colour": "Black"
+      },
+      {
+        "Brand": "Candy",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Candy Grand'O Vita GV169TWC3W 9Kg Washing Machine with 1600 rpm - White",
+        "Price": 279,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/candy_gv169twc3w_wh_01_m_p.jpg",
+        "ReviewCount": 78,
+        "Code": "GV169TWC3W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WMB101433LW 10Kg Washing Machine with 1400 rpm - White",
+        "Price": 279,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wmb101433lw_wh_01_m_p.jpg",
+        "ReviewCount": 85,
+        "Code": "WMB101433LW_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Zanussi",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Zanussi Lindo300 ZWF01483WR 10Kg Washing Machine with 1400 rpm - White",
+        "Price": 299,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/zwf01483wr_wh_washer_fr_m_p.jpg",
+        "ReviewCount": 373,
+        "Code": "ZWF01483WR_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hoover",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hoover One Touch DXOC410C3 10Kg Washing Machine with 1400 rpm - White / Chrome",
+        "Price": 299,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hoover_dxoc410c3_wh_01_m_p.jpg",
+        "ReviewCount": 108,
+        "Code": "DXOC410C3_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hoover",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hoover Dynamic Next DXCC69W3 9Kg Washing Machine with 1600 rpm - White / Chrome",
+        "Price": 299,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hoover_dxcc69w3_wh_01_m_p.jpg",
+        "ReviewCount": 258,
+        "Code": "DXCC69W3_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 2 WAE28262GB 6Kg Washing Machine with 1400 rpm - White",
+        "Price": 299,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wae28262gb_wh_bosch_washer_01_m_p.jpg",
+        "ReviewCount": 13,
+        "Code": "WAE28262GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WR862441B 8Kg Washing Machine with 1600 rpm - Black",
+        "Price": 299,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wr862441b_bk_01_m_p.jpg",
+        "ReviewCount": 15,
+        "Code": "WR862441B_BK",
+        "Colour": "Black"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WR862441W 8Kg Washing Machine with 1600 rpm - White",
+        "Price": 299,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wr862441w_wh_beko_washer_01_m_p.jpg",
+        "ReviewCount": 26,
+        "Code": "WR862441W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Candy",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Candy Grand'O Vita GVS1410DC3B 10Kg Washing Machine with 1400 rpm - Black",
+        "Price": 300,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/candy_gvs1410dc3b_bk_01_m_p.jpg",
+        "ReviewCount": 6,
+        "Code": "GVS1410DC3B_BK",
+        "Colour": "Black"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Beko WR862441S 8Kg Washing Machine with 1600 rpm - Silver",
+        "Price": 319,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/beko_wr862441s_si_01_m_p.jpg",
+        "ReviewCount": 11,
+        "Code": "WR862441S_SI",
+        "Colour": "Silver"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 4 WAN28050GB 7Kg Washing Machine with 1400 rpm - White",
+        "Price": 329,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wan28050gb_wh_bosch_washer_01_m_p.jpg",
+        "ReviewCount": 38,
+        "Code": "WAN28050GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hoover",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hoover Dynamic Next DXCC69IB3 9Kg Washing Machine with 1600 rpm - Black",
+        "Price": 329,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hoover_dxcc69ib3_bk_01_m_p.jpg",
+        "ReviewCount": 62,
+        "Code": "DXCC69IB3_BK",
+        "Colour": "Black"
+      },
+      {
+        "Brand": "Beko",
+        "FitTypeName": "Built In",
+        "FullTitle": "Beko WMI71641 Integrated 7Kg Washing Machine with 1600 rpm",
+        "Price": 349,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wmi71641_wh_beko_intwasher_01_m_p.jpg",
+        "ReviewCount": 749,
+        "Code": "WMI71641",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Built In",
+        "FullTitle": "Hotpoint BHWM1292 Integrated 7Kg Washing Machine with 1200 rpm",
+        "Price": 349,
+        "RatingValue": 4.5,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_bhwm1292_wh_01_m_p.jpg",
+        "ReviewCount": 417,
+        "Code": "BHWM1292_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 4 WAN24100GB 7Kg Washing Machine with 1200 rpm - White",
+        "Price": 349,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/bosch_wan24100gb_wh_01_m_p.jpg",
+        "ReviewCount": 12,
+        "Code": "WAN24100GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "LG",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "LG F14B8TDA 8Kg Washing Machine with 1400 rpm - White",
+        "Price": 349,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/lg_f14b8tda_wh_01_m_p.jpg",
+        "ReviewCount": 26,
+        "Code": "F14B8TDA_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Built In",
+        "FullTitle": "Hotpoint Extra BHWMXL145 Integrated 7Kg Washing Machine with 1400 rpm",
+        "Price": 359,
+        "RatingValue": 4.5,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_bhwmxl145_wh_01_m_p.jpg",
+        "ReviewCount": 19,
+        "Code": "BHWMXL145_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Samsung",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Samsung Ecobubble WF80F5E0W4W 8Kg Washing Machine with 1400 rpm - White",
+        "Price": 369,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wf80f5e0w4w_wh_washingmachine_fr_m_p.jpg",
+        "ReviewCount": 665,
+        "Code": "WF80F5E0W4W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Candy",
+        "FitTypeName": "Built In",
+        "FullTitle": "Candy CBWM914D Integrated 9Kg Washing Machine with 1400 rpm",
+        "Price": 379,
+        "RatingValue": 0,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/cbwm914d_wh_candy_washer_01_m_p.jpg",
+        "ReviewCount": 0,
+        "Code": "CBWM914D_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 6 WAQ283S1GB 8Kg Washing Machine with 1400 rpm - White",
+        "Price": 379,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/bosch_waq283s1gb_wh_01_m_p.jpg",
+        "ReviewCount": 178,
+        "Code": "WAQ283S1GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Samsung",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Samsung Ecobubble WF70F5E2W4X 7Kg Washing Machine with 1400 rpm - Inox / Chrome",
+        "Price": 387,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wf70f5e2w4x_si_washingmachine_fr_m_p.jpg",
+        "ReviewCount": 235,
+        "Code": "WF70F5E2W4X_SI",
+        "Colour": "Stainless Steel"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Built In",
+        "FullTitle": "Hotpoint Ultima BHWMD732 Integrated 7Kg Washing Machine with 1300 rpm",
+        "Price": 389,
+        "RatingValue": 4.8,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_bhwmd732_wh_01_m_p.jpg",
+        "ReviewCount": 4,
+        "Code": "BHWMD732_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hoover",
+        "FitTypeName": "Built In",
+        "FullTitle": "Hoover HBWM814TAHC Integrated 8Kg Washing Machine with 1400 rpm",
+        "Price": 399,
+        "RatingValue": 5,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hbwm814tahc_wh_hoover_washer_01a_m_p.jpg",
+        "ReviewCount": 2,
+        "Code": "HBWM814TAHC_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 6 Titan Edition WAQ28470GB 8Kg Washing Machine with 1400 rpm - White",
+        "Price": 399,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/bosch_waq28470gb_wh_01_m_p.jpg",
+        "ReviewCount": 111,
+        "Code": "WAQ28470GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Samsung",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Samsung AddWash™ AddWash™ WW70K5413UW 7Kg Washing Machine with 1400 rpm - White",
+        "Price": 399,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/ww70k5413uw_wh_samsung_washer_01_m_p.jpg",
+        "ReviewCount": 17,
+        "Code": "WW70K5413UW_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Stoves",
+        "FitTypeName": "Built In",
+        "FullTitle": "Stoves IWM8KG Integrated 8Kg Washing Machine with 1400 rpm",
+        "Price": 399,
+        "RatingValue": 3,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/iwm8kg_wh_stoves_washer_01_m_p.jpg",
+        "ReviewCount": 2,
+        "Code": "IWM8KG_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Zanussi",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Zanussi Lindo300 ZWF91483WR 9Kg Washing Machine with 1400 rpm - White",
+        "Price": 399,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/zanussi_zwf91483wr_wh_01_m_p.jpg",
+        "ReviewCount": 102,
+        "Code": "ZWF91483WR_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Zanussi",
+        "FitTypeName": "Built In",
+        "FullTitle": "Zanussi ZWi71201WA Integrated 7Kg Washing Machine with 1200 rpm",
+        "Price": 405,
+        "RatingValue": 4.4,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/zwi71201wa_wh_washer_fr_m_p.jpg",
+        "ReviewCount": 33,
+        "Code": "ZWi71201WA_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Samsung",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Samsung Ecobubble WF90F5E3U4W 9Kg Washing Machine with 1400 rpm - White",
+        "Price": 429,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/samsung_wf90f5e3u4w_wh_01_m_p.jpg",
+        "ReviewCount": 94,
+        "Code": "WF90F5E3U4W_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint Ultima S-Line RPD10667DD 10Kg Washing Machine with 1600 rpm - White",
+        "Price": 462,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_rpd10667dd_wh_01_m_p.jpg",
+        "ReviewCount": 14,
+        "Code": "RPD10667DD_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "AEG",
+        "FitTypeName": "Built In",
+        "FullTitle": "AEG Lavamat L61470BI Integrated 7Kg Washing Machine with 1400 rpm",
+        "Price": 579,
+        "RatingValue": 3.9,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/l61470bi_wh_washingmachine_fr_m_p.jpg",
+        "ReviewCount": 7,
+        "Code": "L61470BI_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 8 WAW32560GB 9Kg Washing Machine with 1600 rpm - White",
+        "Price": 599,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/bosch_waw32560gb_wh_01_m_p.jpg",
+        "ReviewCount": 80,
+        "Code": "WAW32560GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Samsung",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Samsung Ecobubble AddWash™ WW90K6610QX 9Kg Washing Machine with 1600 rpm - Graphite",
+        "Price": 599,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/samsung_ww90k6610qx_gh_01_m_p.jpg",
+        "ReviewCount": 13,
+        "Code": "WW90K6610QX_GH",
+        "Colour": "Silver"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint Ultima S-Line RPD1165DD/1 11Kg Washing Machine with 1600 rpm - White",
+        "Price": 599,
+        "RatingValue": 0,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_rpd1165dduk_wh_01_m_p.jpg",
+        "ReviewCount": 0,
+        "Code": "RPD1165DD/1_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Miele",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Miele W Classic WDA101 7Kg Washing Machine with 1400 rpm - White",
+        "Price": 599,
+        "RatingValue": 4.5,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wda101_wh_miele_washer_01_m_p.jpg",
+        "ReviewCount": 28,
+        "Code": "WDA101_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Built In",
+        "FullTitle": "Bosch Serie 8 WIS24141GB Integrated 7Kg Washing Machine with 1200 rpm",
+        "Price": 619,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wis24141gb_wh_washing-machine_fr_m_p.jpg",
+        "ReviewCount": 68,
+        "Code": "WIS24141GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Built In",
+        "FullTitle": "Bosch Serie 8 WIS28441GB Integrated 7Kg Washing Machine with 1400 rpm",
+        "Price": 669,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wis28441gb_wh_washer_opd_m_p.jpg",
+        "ReviewCount": 125,
+        "Code": "WIS28441GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "AEG",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "AEG 7000 Series L7FBE941R 9Kg Washing Machine with 1400 rpm - White",
+        "Price": 679,
+        "RatingValue": 4,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/aeg_l7fbe941r_wh_01_m_p.jpg",
+        "ReviewCount": 3,
+        "Code": "L7FBE941R_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "LG",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "LG TrueSteam™ F14U1JBS8 10Kg Washing Machine with 1400 rpm - Black",
+        "Price": 749,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/lg_f14u1jbs8_bk_01_m_p.jpg",
+        "ReviewCount": 10,
+        "Code": "F14U1JBS8_BK",
+        "Colour": "Black"
+      }
+    ]
+  },
+  "facets": [
+    {
+      "facetId": 1,
+      "isRange": false,
+      "displayName": "Fit Type",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "Free Standing",
+          "key": "Free Standing",
+          "count": 48,
+          "selected": false
+        },
+        {
+          "index": 1,
+          "displayName": "Built In",
+          "key": "Built In",
+          "count": 12,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "facetId": 2,
+      "isRange": false,
+      "displayName": "Brand",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "Beko",
+          "key": "Beko",
+          "count": 14,
+          "selected": false
+        },
+        {
+          "index": 1,
+          "displayName": "Bosch",
+          "key": "Bosch",
+          "count": 9,
+          "selected": false
+        },
+        {
+          "index": 2,
+          "displayName": "Hotpoint",
+          "key": "Hotpoint",
+          "count": 9,
+          "selected": false
+        },
+        {
+          "index": 3,
+          "displayName": "Hoover",
+          "key": "Hoover",
+          "count": 6,
+          "selected": false
+        },
+        {
+          "index": 4,
+          "displayName": "Samsung",
+          "key": "Samsung",
+          "count": 5,
+          "selected": false
+        },
+        {
+          "index": 5,
+          "displayName": "Candy",
+          "key": "Candy",
+          "count": 4,
+          "selected": false
+        },
+        {
+          "index": 6,
+          "displayName": "Zanussi",
+          "key": "Zanussi",
+          "count": 4,
+          "selected": false
+        },
+        {
+          "index": 7,
+          "displayName": "AEG",
+          "key": "AEG",
+          "count": 2,
+          "selected": false
+        },
+        {
+          "index": 8,
+          "displayName": "Indesit",
+          "key": "Indesit",
+          "count": 2,
+          "selected": false
+        },
+        {
+          "index": 9,
+          "displayName": "LG",
+          "key": "LG",
+          "count": 2,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "facetId": 3,
+      "isRange": false,
+      "displayName": "Colour",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "White",
+          "key": "White",
+          "count": 47,
+          "selected": false
+        },
+        {
+          "index": 1,
+          "displayName": "Black",
+          "key": "Black",
+          "count": 7,
+          "selected": false
+        },
+        {
+          "index": 2,
+          "displayName": "Silver",
+          "key": "Silver",
+          "count": 5,
+          "selected": false
+        },
+        {
+          "index": 3,
+          "displayName": "Stainless Steel",
+          "key": "Stainless Steel",
+          "count": 1,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "facetId": 4,
+      "isRange": true,
+      "displayName": "Price",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "&pound;200 or less",
+          "key": "*-200.0",
+          "count": 4,
+          "selected": false,
+          "to": 200
+        },
+        {
+          "index": 1,
+          "displayName": "&pound;200 - &pound;250",
+          "key": "200.0-250.0",
+          "count": 10,
+          "selected": false,
+          "from": 200,
+          "to": 250
+        },
+        {
+          "index": 2,
+          "displayName": "&pound;250 - &pound;300",
+          "key": "250.0-300.0",
+          "count": 15,
+          "selected": false,
+          "from": 250,
+          "to": 300
+        },
+        {
+          "index": 3,
+          "displayName": "&pound;300 - &pound;350",
+          "key": "300.0-350.0",
+          "count": 8,
+          "selected": false,
+          "from": 300,
+          "to": 350
+        },
+        {
+          "index": 4,
+          "displayName": "&pound;350 - &pound;400",
+          "key": "350.0-400.0",
+          "count": 11,
+          "selected": false,
+          "from": 350,
+          "to": 400
+        },
+        {
+          "index": 5,
+          "displayName": "&pound;400 - &pound;450",
+          "key": "400.0-450.0",
+          "count": 2,
+          "selected": false,
+          "from": 400,
+          "to": 450
+        },
+        {
+          "index": 6,
+          "displayName": "&pound;450 - &pound;500",
+          "key": "450.0-500.0",
+          "count": 1,
+          "selected": false,
+          "from": 450,
+          "to": 500
+        },
+        {
+          "index": 7,
+          "displayName": "&pound;550 - &pound;600",
+          "key": "550.0-600.0",
+          "count": 5,
+          "selected": false,
+          "from": 550,
+          "to": 600
+        },
+        {
+          "index": 8,
+          "displayName": "&pound;600 - &pound;650",
+          "key": "600.0-650.0",
+          "count": 1,
+          "selected": false,
+          "from": 600,
+          "to": 650
+        },
+        {
+          "index": 9,
+          "displayName": "&pound;650 or more",
+          "key": "650.0-*",
+          "count": 3,
+          "selected": false,
+          "from": 650
+        }
+      ]
+    }
+  ]
+}
