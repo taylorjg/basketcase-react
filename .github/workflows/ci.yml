@@ -39,6 +39,15 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: troubleshooting
+        run: |
+          echo "github.event_name: ${{ github.event_name }}"
+          echo "github.event_path: ${{ github.event_path }}"
+          echo "github.path: ${{ github.path }}"
+          echo "github.ref: ${{ github.ref }}"
+          echo "github.ref_name: ${{ github.ref_name }}"
+          echo "github.ref_type: ${{ github.ref_type }}"
+          echo "github.event: ${{ github.event }}"
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:

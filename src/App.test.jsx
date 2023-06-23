@@ -21,6 +21,5 @@ describe("App test suite", () => {
     for (const productDescription of productDescriptions) {
       expect(await screen.findByText(productDescription)).toBeInTheDocument();
     }
-    expect(2 + 2).toBe(5);
   });
 });
