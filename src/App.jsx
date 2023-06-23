@@ -1,21 +1,46 @@
+import { useState } from "react";
+import { Button } from "@mui/material";
+
 import { Product } from "./Product";
-import { useSearch } from "./use-search";
+import { useSearch, useLazySearch } from "./use-search";
 
 export const App = () => {
-  const searchResponse = useSearch({ searchText: "candy" });
+  const [products, setProducts] = useState([]);
 
-  if (searchResponse.isLoading) {
+  const onSearchSuccess = (data) => {
+    setProducts(data.products);
+  };
+
+  const onSearchError = (error) => {
+    console.error("[onSearchError]", error.message);
+  };
+
+  const options = {
+    onSuccess: onSearchSuccess,
+    onError: onSearchError,
+  };
+
+  // Initial query
+  const initialSearchResponse = useSearch({ searchText: "candy" }, options);
+
+  // On-demand queries
+  const { search } = useLazySearch(options);
+
+  if (initialSearchResponse.isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (searchResponse.isError) {
+  if (initialSearchResponse.isError) {
     return <div>ERROR!</div>;
   }
 
-  const { products } = searchResponse.data;
+  const onRefresh = () => {
+    search({ searchText: "aeg" });
+  };
 
   return (
     <div>
+      <Button onClick={onRefresh}>Refresh</Button>
       {products.map((product) => (
         <Product key={product.Code} product={product} />
       ))}
