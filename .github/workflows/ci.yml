@@ -50,8 +50,8 @@ jobs:
       - uses: actions-ecosystem/action-regex-match@v2
         id: regex-match
         with:
-          text: ${{ github.ref }}
-          regex: '^v\d+\.\d+\.\d+$'
+          text: ${{ github.event.head_commit.message }}
+          regex: '^\d+\.\d+\.\d+$'
       - uses: peaceiris/actions-gh-pages@v3
         if: ${{ steps.regex-match.outputs.match != '' }}
         with:
