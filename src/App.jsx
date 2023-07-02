@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 
 import { useSearch, useLazySearch } from "@app/hooks/use-search";
 import { useIsActive } from "@app/hooks/use-is-active";
+import { useToast } from "@app/hooks/use-toast";
 
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
 import { Product } from "@app/components/Product";
@@ -11,6 +12,7 @@ import { Version } from "@app/components/Version";
 import { StyledContainer } from "./App.styles";
 
 export const App = () => {
+  const { showError } = useToast();
   const [searchOptions] = useState({});
   const [products, setProducts] = useState([]);
 
@@ -19,7 +21,8 @@ export const App = () => {
   };
 
   const onSearchError = (error) => {
-    console.error("[onSearchError]", error.message);
+    setProducts([]);
+    showError(`Failed to load products: ${error.message}`);
   };
 
   const options = {
@@ -28,16 +31,12 @@ export const App = () => {
   };
 
   // Initial query
-  const initialSearchResponse = useSearch(searchOptions, options);
+  useSearch(searchOptions, options);
 
   // On-demand queries
   const { search } = useLazySearch(options);
 
   const isActive = useIsActive();
-
-  if (initialSearchResponse.isError) {
-    return <div>ERROR!</div>;
-  }
 
   const onRefresh = () => {
     const searchOptionsExampleWithSearchText = { searchText: "aeg" };

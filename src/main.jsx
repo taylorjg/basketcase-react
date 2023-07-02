@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Global } from "@emotion/react";
 
+import { ToastProvider } from "@app/hooks/use-toast";
+
 import { GlobalStyles } from "./Global.styles";
 
 import { App } from "./App.jsx";
@@ -20,7 +22,9 @@ ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <Global styles={GlobalStyles} />
-      <App />
+      <ToastProvider>
+        <App />
+      </ToastProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

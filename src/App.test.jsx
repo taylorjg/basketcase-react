@@ -1,12 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ToastProvider } from "@app/hooks/use-toast";
 import { App } from "./App";
 
 const renderPage = () => {
   const queryClient = new QueryClient();
   return render(
     <QueryClientProvider client={queryClient}>
-      <App />
+      <ToastProvider>
+        <App />
+      </ToastProvider>
     </QueryClientProvider>
   );
 };
