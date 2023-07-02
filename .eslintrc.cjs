@@ -18,6 +18,7 @@ module.exports = {
   plugins: ["react-refresh", "vitest"],
   rules: {
     "react-refresh/only-export-components": "warn",
+    "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
   },
   overrides: [
     {

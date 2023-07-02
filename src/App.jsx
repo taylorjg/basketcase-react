@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { Button } from "@mui/material";
 
-import { Product } from "./Product";
-import { Version } from "./Version";
-import { useSearch, useLazySearch } from "./use-search";
+import { useSearch, useLazySearch } from "@app/hooks/use-search";
+import { useIsActive } from "@app/hooks/use-is-active";
+
+import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
+import { Product } from "@app/components/Product";
+import { Version } from "@app/components/Version";
+
 import { StyledContainer } from "./App.styles";
 
 export const App = () => {
@@ -29,9 +33,7 @@ export const App = () => {
   // On-demand queries
   const { search } = useLazySearch(options);
 
-  if (initialSearchResponse.isLoading) {
-    return <div>Loading...</div>;
-  }
+  const isActive = useIsActive();
 
   if (initialSearchResponse.isError) {
     return <div>ERROR!</div>;
@@ -46,6 +48,7 @@ export const App = () => {
     <StyledContainer maxWidth="xs">
       <Button onClick={onRefresh}>Refresh</Button>
       <Version />
+      <NetworkActivityProgressBar isActive={isActive} />
       {products.map((product) => (
         <Product key={product.Code} product={product} />
       ))}
