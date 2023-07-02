@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 
 import {
   StyledProduct,
-  StyledProductLeft,
-  StyledProductCentre,
-  StyledProductRight,
+  StyledProductLeftPanel,
+  StyledProductCentrePanel,
+  StyledProductRightPanel,
   StyledProductImage,
   StyledBrandImage,
   StyledProductDescription,
@@ -21,16 +21,16 @@ export const Product = ({ product }) => {
 
   return (
     <StyledProduct>
-      <StyledProductLeft>
+      <StyledProductLeftPanel>
         <StyledProductImage src={productImageUrl} />
-      </StyledProductLeft>
-      <StyledProductCentre>
+      </StyledProductLeftPanel>
+      <StyledProductCentrePanel>
         <StyledBrandImage src={brandImageUrl} />
         <StyledProductDescription>{product.FullTitle}</StyledProductDescription>
-      </StyledProductCentre>
-      <StyledProductRight>
+      </StyledProductCentrePanel>
+      <StyledProductRightPanel>
         <StyledPrice>&pound;{product.Price}</StyledPrice>
-      </StyledProductRight>
+      </StyledProductRightPanel>
     </StyledProduct>
   );
 };

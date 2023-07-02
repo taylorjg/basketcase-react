@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import { Product } from "./Product";
 import { Version } from "./Version";
 import { useSearch, useLazySearch } from "./use-search";
+import { StyledContainer } from "./App.styles";
 
 export const App = () => {
   const [searchOptions] = useState({});
@@ -42,12 +43,12 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <Version />
+    <StyledContainer maxWidth="xs">
       <Button onClick={onRefresh}>Refresh</Button>
+      <Version />
       {products.map((product) => (
         <Product key={product.Code} product={product} />
       ))}
-    </div>
+    </StyledContainer>
   );
 };

@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
 
 export const StyledVersion = styled.span`
-  position: fixed;
-  top: 0.5rem;
-  right: 0.5rem;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
   font-size: small;
   font-style: italic;
-  margin-right: 0.5rem;
 `;

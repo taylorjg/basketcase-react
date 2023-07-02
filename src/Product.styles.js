@@ -1,32 +1,36 @@
 import styled from "@emotion/styled";
 
 export const StyledProduct = styled.div`
-  margin: 2rem auto;
-  width: 50%;
+  margin: 2rem 0;
   display: flex;
-  gap: 1rem;
+  row-gap: 1rem;
+  width: 100%;
 `;
 
-export const StyledProductLeft = styled.div``;
+export const StyledProductLeftPanel = styled.div`
+  flex: 1;
+`;
 
-export const StyledProductCentre = styled.div`
-  width: 100%;
+export const StyledProductCentrePanel = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  row-gap: 0.5rem;
+  flex: 1;
 `;
 
-export const StyledProductRight = styled.div`
+export const StyledProductRightPanel = styled.div`
   display: flex;
   justify-content: flex-end;
+  flex-grow: 0;
 `;
 
 export const StyledProductImage = styled.img`
-  width: 200px;
+  width: 100%;
 `;
 
 export const StyledBrandImage = styled.img`
-  width: 100px;
+  width: 50%;
+  align-self: center;
 `;
 
 export const StyledProductDescription = styled.div``;
