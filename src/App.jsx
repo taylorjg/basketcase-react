@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { useSearch, useLazySearch } from "@app/hooks/use-search";
-import { useIsActive } from "@app/hooks/use-is-active";
+import { useLazySearch } from "@app/hooks/use-search";
 import { useToast } from "@app/hooks/use-toast";
 
 import { FilterButton } from "@app/components/FilterButton";
@@ -34,18 +33,12 @@ export const App = () => {
     onError: onSearchError,
   };
 
-  // Initial query
-  useSearch(searchOptions, options);
-
-  // On-demand queries
   const { search } = useLazySearch(options);
 
   useEffect(() => {
     console.log("[useEffect searchOptions]");
     search(searchOptions);
   }, [search, searchOptions]);
-
-  const isActive = useIsActive();
 
   const onChangeSortBy = (sortBy) => {
     setSearchOptions((currentSearchOptions) => ({
@@ -57,7 +50,7 @@ export const App = () => {
   return (
     <StyledContainer maxWidth="xs">
       <Version />
-      <NetworkActivityProgressBar isActive={isActive} />
+      <NetworkActivityProgressBar />
       <StyledFilterAndSortBy>
         <FilterButton facets={facets} />
         <SortBy sortBy={searchOptions.sortBy} onChange={onChangeSortBy} />
