@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { ToastProvider } from "@app/hooks/use-toast";
+import { ToastProvider } from "@app/hooks/toast-provider";
 import { App } from "./App";
 
 const renderPage = () => {

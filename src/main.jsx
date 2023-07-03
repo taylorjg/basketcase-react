@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Global } from "@emotion/react";
 
-import { ToastProvider } from "@app/hooks/use-toast";
+import { ToastProvider } from "@app/hooks/toast-provider";
 
 import { GlobalStyles } from "./Global.styles";
 

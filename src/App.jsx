@@ -36,7 +36,6 @@ export const App = () => {
   const { search } = useLazySearch(options);
 
   useEffect(() => {
-    console.log("[useEffect searchOptions]");
     search(searchOptions);
   }, [search, searchOptions]);
 

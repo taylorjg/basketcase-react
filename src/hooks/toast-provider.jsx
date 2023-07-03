@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Alert, Snackbar, Slide } from "@mui/material";
 
-const ToastContext = React.createContext();
+export const ToastContext = React.createContext();
 
 export const ToastProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
@@ -51,5 +51,3 @@ export const ToastProvider = ({ children }) => {
 ToastProvider.propTypes = {
   children: PropTypes.node,
 };
-
-export const useToast = () => useContext(ToastContext);
