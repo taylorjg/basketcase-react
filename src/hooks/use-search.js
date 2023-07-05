@@ -1,19 +1,29 @@
 import axios from "axios";
-import { useQuery, useMutation } from "react-query";
+import { useMutation } from "react-query";
 
 axios.defaults.baseURL = "https://rqnfyvya7e.execute-api.us-east-1.amazonaws.com";
 
-const doSearchInner = async (searchOptions) => {
+const forceConversionToNumber = (searchOptions, propertyName) => {
+  const propertyExists = Object.prototype.hasOwnProperty.call(searchOptions, propertyName);
+  return propertyExists ? { [propertyName]: Number(searchOptions[propertyName]) } : undefined;
+};
+
+const refineSearchOptions = (searchOptions) => {
+  return {
+    ...searchOptions,
+    ...forceConversionToNumber(searchOptions, "pageSize"),
+    ...forceConversionToNumber(searchOptions, "currentPage"),
+    ...forceConversionToNumber(searchOptions, "sortBy"),
+  };
+};
+
+const doSearch = async (searchOptions) => {
   const url = "/api/search";
-  const response = await axios.post(url, searchOptions);
+  const refinedSearchOptions = refineSearchOptions(searchOptions);
+  const response = await axios.post(url, refinedSearchOptions);
   const facets = response.data.facets;
   const products = response.data.results.products;
   return { products, facets };
-};
-
-const doSearch = async (options) => {
-  const [, searchOptions] = options.queryKey;
-  return doSearchInner(searchOptions);
 };
 
 const makeQueryOptions = (options) => {
@@ -28,14 +38,9 @@ const makeQueryOptions = (options) => {
   return undefined;
 };
 
-export const useSearch = (searchOptions, options) => {
-  const queryOptions = makeQueryOptions(options);
-  return useQuery(["search", searchOptions], doSearch, queryOptions);
-};
-
 export const useLazySearch = (options) => {
   const queryOptions = makeQueryOptions(options);
-  const { mutate, mutateAsync } = useMutation(doSearchInner, queryOptions);
+  const { mutate, mutateAsync } = useMutation(doSearch, queryOptions);
   return {
     search: mutate,
     searchAsync: mutateAsync,
