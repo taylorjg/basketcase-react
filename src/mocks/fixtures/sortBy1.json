@@ -1,0 +1,360 @@
+{
+  "results": {
+    "total": {
+      "value": 60,
+      "relation": "eq"
+    },
+    "products": [
+      {
+        "Brand": "LG",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "LG TrueSteam™ F14U1JBS8 10Kg Washing Machine with 1400 rpm - Black",
+        "Price": 749,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/lg_f14u1jbs8_bk_01_m_p.jpg",
+        "ReviewCount": 10,
+        "Code": "F14U1JBS8_BK",
+        "Colour": "Black"
+      },
+      {
+        "Brand": "AEG",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "AEG 7000 Series L7FBE941R 9Kg Washing Machine with 1400 rpm - White",
+        "Price": 679,
+        "RatingValue": 4,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/aeg_l7fbe941r_wh_01_m_p.jpg",
+        "ReviewCount": 3,
+        "Code": "L7FBE941R_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Built In",
+        "FullTitle": "Bosch Serie 8 WIS28441GB Integrated 7Kg Washing Machine with 1400 rpm",
+        "Price": 669,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wis28441gb_wh_washer_opd_m_p.jpg",
+        "ReviewCount": 125,
+        "Code": "WIS28441GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Built In",
+        "FullTitle": "Bosch Serie 8 WIS24141GB Integrated 7Kg Washing Machine with 1200 rpm",
+        "Price": 619,
+        "RatingValue": 4.6,
+        "EnergyRating": "A+",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wis24141gb_wh_washing-machine_fr_m_p.jpg",
+        "ReviewCount": 68,
+        "Code": "WIS24141GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Bosch",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Bosch Serie 8 WAW32560GB 9Kg Washing Machine with 1600 rpm - White",
+        "Price": 599,
+        "RatingValue": 4.9,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/bosch_waw32560gb_wh_01_m_p.jpg",
+        "ReviewCount": 80,
+        "Code": "WAW32560GB_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Samsung",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Samsung Ecobubble AddWash™ WW90K6610QX 9Kg Washing Machine with 1600 rpm - Graphite",
+        "Price": 599,
+        "RatingValue": 4.8,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/samsung_ww90k6610qx_gh_01_m_p.jpg",
+        "ReviewCount": 13,
+        "Code": "WW90K6610QX_GH",
+        "Colour": "Silver"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint Ultima S-Line RPD1165DD/1 11Kg Washing Machine with 1600 rpm - White",
+        "Price": 599,
+        "RatingValue": 0,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_rpd1165dduk_wh_01_m_p.jpg",
+        "ReviewCount": 0,
+        "Code": "RPD1165DD/1_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Miele",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Miele W Classic WDA101 7Kg Washing Machine with 1400 rpm - White",
+        "Price": 599,
+        "RatingValue": 4.5,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/wda101_wh_miele_washer_01_m_p.jpg",
+        "ReviewCount": 28,
+        "Code": "WDA101_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "AEG",
+        "FitTypeName": "Built In",
+        "FullTitle": "AEG Lavamat L61470BI Integrated 7Kg Washing Machine with 1400 rpm",
+        "Price": 579,
+        "RatingValue": 3.9,
+        "EnergyRating": "A++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/l61470bi_wh_washingmachine_fr_m_p.jpg",
+        "ReviewCount": 7,
+        "Code": "L61470BI_WH",
+        "Colour": "White"
+      },
+      {
+        "Brand": "Hotpoint",
+        "FitTypeName": "Free Standing",
+        "FullTitle": "Hotpoint Ultima S-Line RPD10667DD 10Kg Washing Machine with 1600 rpm - White",
+        "Price": 462,
+        "RatingValue": 4.7,
+        "EnergyRating": "A+++",
+        "Image": "//media.ao.com/en-GB/Productimages/Images/rvMedium/hotpoint_rpd10667dd_wh_01_m_p.jpg",
+        "ReviewCount": 14,
+        "Code": "RPD10667DD_WH",
+        "Colour": "White"
+      }
+    ]
+  },
+  "facets": [
+    {
+      "facetId": 1,
+      "isRange": false,
+      "displayName": "Fit Type",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "Free Standing",
+          "key": "Free Standing",
+          "count": 48,
+          "selected": false
+        },
+        {
+          "index": 1,
+          "displayName": "Built In",
+          "key": "Built In",
+          "count": 12,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "facetId": 2,
+      "isRange": false,
+      "displayName": "Brand",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "Beko",
+          "key": "Beko",
+          "count": 14,
+          "selected": false
+        },
+        {
+          "index": 1,
+          "displayName": "Bosch",
+          "key": "Bosch",
+          "count": 9,
+          "selected": false
+        },
+        {
+          "index": 2,
+          "displayName": "Hotpoint",
+          "key": "Hotpoint",
+          "count": 9,
+          "selected": false
+        },
+        {
+          "index": 3,
+          "displayName": "Hoover",
+          "key": "Hoover",
+          "count": 6,
+          "selected": false
+        },
+        {
+          "index": 4,
+          "displayName": "Samsung",
+          "key": "Samsung",
+          "count": 5,
+          "selected": false
+        },
+        {
+          "index": 5,
+          "displayName": "Candy",
+          "key": "Candy",
+          "count": 4,
+          "selected": false
+        },
+        {
+          "index": 6,
+          "displayName": "Zanussi",
+          "key": "Zanussi",
+          "count": 4,
+          "selected": false
+        },
+        {
+          "index": 7,
+          "displayName": "AEG",
+          "key": "AEG",
+          "count": 2,
+          "selected": false
+        },
+        {
+          "index": 8,
+          "displayName": "Indesit",
+          "key": "Indesit",
+          "count": 2,
+          "selected": false
+        },
+        {
+          "index": 9,
+          "displayName": "LG",
+          "key": "LG",
+          "count": 2,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "facetId": 3,
+      "isRange": false,
+      "displayName": "Colour",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "White",
+          "key": "White",
+          "count": 47,
+          "selected": false
+        },
+        {
+          "index": 1,
+          "displayName": "Black",
+          "key": "Black",
+          "count": 7,
+          "selected": false
+        },
+        {
+          "index": 2,
+          "displayName": "Silver",
+          "key": "Silver",
+          "count": 5,
+          "selected": false
+        },
+        {
+          "index": 3,
+          "displayName": "Stainless Steel",
+          "key": "Stainless Steel",
+          "count": 1,
+          "selected": false
+        }
+      ]
+    },
+    {
+      "facetId": 4,
+      "isRange": true,
+      "displayName": "Price",
+      "facetValues": [
+        {
+          "index": 0,
+          "displayName": "&pound;200 or less",
+          "key": "*-200.0",
+          "count": 4,
+          "selected": false,
+          "to": 200
+        },
+        {
+          "index": 1,
+          "displayName": "&pound;200 - &pound;250",
+          "key": "200.0-250.0",
+          "count": 10,
+          "selected": false,
+          "from": 200,
+          "to": 250
+        },
+        {
+          "index": 2,
+          "displayName": "&pound;250 - &pound;300",
+          "key": "250.0-300.0",
+          "count": 15,
+          "selected": false,
+          "from": 250,
+          "to": 300
+        },
+        {
+          "index": 3,
+          "displayName": "&pound;300 - &pound;350",
+          "key": "300.0-350.0",
+          "count": 8,
+          "selected": false,
+          "from": 300,
+          "to": 350
+        },
+        {
+          "index": 4,
+          "displayName": "&pound;350 - &pound;400",
+          "key": "350.0-400.0",
+          "count": 11,
+          "selected": false,
+          "from": 350,
+          "to": 400
+        },
+        {
+          "index": 5,
+          "displayName": "&pound;400 - &pound;450",
+          "key": "400.0-450.0",
+          "count": 2,
+          "selected": false,
+          "from": 400,
+          "to": 450
+        },
+        {
+          "index": 6,
+          "displayName": "&pound;450 - &pound;500",
+          "key": "450.0-500.0",
+          "count": 1,
+          "selected": false,
+          "from": 450,
+          "to": 500
+        },
+        {
+          "index": 7,
+          "displayName": "&pound;550 - &pound;600",
+          "key": "550.0-600.0",
+          "count": 5,
+          "selected": false,
+          "from": 550,
+          "to": 600
+        },
+        {
+          "index": 8,
+          "displayName": "&pound;600 - &pound;650",
+          "key": "600.0-650.0",
+          "count": 1,
+          "selected": false,
+          "from": 600,
+          "to": 650
+        },
+        {
+          "index": 9,
+          "displayName": "&pound;650 or more",
+          "key": "650.0-*",
+          "count": 3,
+          "selected": false,
+          "from": 650
+        }
+      ]
+    }
+  ]
+}
