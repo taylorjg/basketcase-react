@@ -4,8 +4,9 @@ import { useMutation } from "react-query";
 axios.defaults.baseURL = "https://rqnfyvya7e.execute-api.us-east-1.amazonaws.com";
 
 const forceConversionToNumber = (searchOptions, propertyName) => {
-  const propertyExists = Object.prototype.hasOwnProperty.call(searchOptions, propertyName);
-  return propertyExists ? { [propertyName]: Number(searchOptions[propertyName]) } : undefined;
+  const isUndefined = searchOptions[propertyName] === undefined;
+  const propertyValue = !isUndefined ? Number(searchOptions[propertyName]) : undefined;
+  return { [propertyName]: propertyValue };
 };
 
 const refineSearchOptions = (searchOptions) => {
