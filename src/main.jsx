@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Global } from "@emotion/react";
-import { Routes, Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
 import { ToastProvider } from "@app/hooks/toast-provider";
@@ -25,9 +24,7 @@ ReactDOM.createRoot(root).render(
       <Global styles={GlobalStyles} />
       <ToastProvider>
         <BrowserRouter>
-          <Routes>
-            <Route path="*" element={<App />} />
-          </Routes>
+          <App />
         </BrowserRouter>
       </ToastProvider>
     </QueryClientProvider>

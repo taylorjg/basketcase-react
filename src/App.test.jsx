@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import { Routes, Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -13,9 +12,7 @@ const renderApp = () => {
     <QueryClientProvider client={queryClient}>
       <ToastProvider>
         <BrowserRouter>
-          <Routes>
-            <Route path="*" element={<App />} />
-          </Routes>
+          <App />
         </BrowserRouter>
       </ToastProvider>
     </QueryClientProvider>
