@@ -11,7 +11,12 @@ import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
 import { sortByAsNumber, updatedSortBy } from "./searchOptionsUtils";
-import { StyledContainer, StyledFilterAndSortBy } from "./App.styles";
+import {
+  StyledContainer,
+  StyledFilterAndSortBy,
+  StyledPageHeader,
+  StyledPageHeaderTop,
+} from "./App.styles";
 
 export const App = () => {
   const { showError } = useToast();
@@ -50,12 +55,16 @@ export const App = () => {
 
   return (
     <StyledContainer maxWidth="xs">
-      <Version />
-      <NetworkActivityProgressBar />
-      <StyledFilterAndSortBy>
-        <FilterButton facets={facets} />
-        <SortBy sortBy={sortByAsNumber(searchOptions.sortBy)} onChange={onChangeSortBy} />
-      </StyledFilterAndSortBy>
+      <StyledPageHeader>
+        <StyledPageHeaderTop>
+          <Version />
+        </StyledPageHeaderTop>
+        <StyledFilterAndSortBy>
+          <FilterButton facets={facets} />
+          <SortBy sortBy={sortByAsNumber(searchOptions.sortBy)} onChange={onChangeSortBy} />
+        </StyledFilterAndSortBy>
+        <NetworkActivityProgressBar />
+      </StyledPageHeader>
       {products.map((product) => (
         <Product key={product.Code} product={product} />
       ))}
