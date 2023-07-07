@@ -7,6 +7,7 @@ import { useToast } from "@app/hooks/use-toast";
 import { FilterButton } from "@app/components/FilterButton";
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
 import { Product } from "@app/components/Product";
+import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
@@ -53,12 +54,20 @@ export const App = () => {
     }));
   };
 
+  const onChangeSearchText = (searchText) => {
+    setSearchOptions((currentSearchOptions) => ({
+      ...currentSearchOptions,
+      searchText,
+    }));
+  };
+
   return (
     <StyledContainer maxWidth="xs">
       <StyledPageHeader>
         <StyledPageHeaderTop>
           <Version />
         </StyledPageHeaderTop>
+        <SearchBar onChange={onChangeSearchText} />
         <StyledFilterAndSortBy>
           <FilterButton facets={facets} />
           <SortBy sortBy={sortByAsNumber(searchOptions.sortBy)} onChange={onChangeSortBy} />
