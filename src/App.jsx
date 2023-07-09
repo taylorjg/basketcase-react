@@ -11,7 +11,7 @@ import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
-import { sortByAsNumber, updatedSortBy } from "./searchOptionsUtils";
+import { sortByAsNumber, updatedSortBy, updatedSearchText } from "./searchOptionsUtils";
 import {
   StyledContainer,
   StyledFilterAndSortBy,
@@ -57,7 +57,7 @@ export const App = () => {
   const onChangeSearchText = (searchText) => {
     setSearchOptions((currentSearchOptions) => ({
       ...currentSearchOptions,
-      searchText,
+      searchText: updatedSearchText(searchText),
     }));
   };
 
