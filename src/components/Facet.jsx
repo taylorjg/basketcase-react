@@ -7,8 +7,8 @@ export const Facet = ({ facet }) => {
     <>
       <div>{facet.displayName}</div>
       <ul>
-        {facet.facetValues.map((facetValue, index) => (
-          <li key={index}>
+        {facet.facetValues.map((facetValue) => (
+          <li key={`${facet.name}-${facetValue.key}`}>
             <FacetValue facetValue={facetValue} />
           </li>
         ))}

@@ -16,8 +16,8 @@ export const FilterPanel = ({ facets, onClose }) => {
       </StyledFilterPanelHeader>
       <Divider />
       <ul>
-        {facets.map((facet, index) => (
-          <li key={index}>
+        {facets.map((facet) => (
+          <li key={facet.name}>
             <Facet facet={facet} />
           </li>
         ))}
