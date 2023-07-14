@@ -5,7 +5,7 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 import { FilterPanel } from "./FilterPanel";
 
-export const FilterButton = ({ facets }) => {
+export const FilterButton = ({ facets, onToggleFacetValue }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const openDrawer = () => {
@@ -22,7 +22,11 @@ export const FilterButton = ({ facets }) => {
         Filter
       </Button>
       <Drawer anchor="left" open={isDrawerOpen} onClose={closeDrawer}>
-        <FilterPanel facets={facets} onClose={closeDrawer} />
+        <FilterPanel
+          facets={facets}
+          onClose={closeDrawer}
+          onToggleFacetValue={onToggleFacetValue}
+        />
       </Drawer>
     </>
   );
@@ -30,4 +34,7 @@ export const FilterButton = ({ facets }) => {
 
 FilterButton.propTypes = {
   facets: PropTypes.array.isRequired,
+  onToggleFacetValue: PropTypes.func.isRequired,
+  // onResetFacet: PropTypes.func.isRequired,
+  // onResetAllFacets: PropTypes.func.isRequired,
 };

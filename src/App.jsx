@@ -12,6 +12,7 @@ import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
 import { sortByAsNumber, updatedSortBy, updatedSearchText } from "./searchOptionsUtils";
+import { toggleFacetValue } from "./facetTwiddling";
 import {
   StyledContainer,
   StyledFilterAndSortBy,
@@ -24,6 +25,30 @@ export const App = () => {
   const [searchOptions, setSearchOptions] = useUrlState({ sortBy: undefined });
   const [products, setProducts] = useState([]);
   const [facets, setFacets] = useState([]);
+
+  const onToggleFacetValue = (name, key) => {
+    const newFacets = toggleFacetValue(facets, name, key);
+    setFacets(newFacets);
+    setSearchOptions((currentSearchOptions) => {
+      const filters = newFacets
+        .map((facet) => {
+          const selectedFacetValues = facet.facetValues.filter(({ selected }) => selected);
+          return {
+            name: facet.name,
+            keys: selectedFacetValues.map(({ key }) => key),
+          };
+        })
+        .filter(({ keys }) => keys.length > 0);
+
+      const kvps = filters.map(({ name, keys }) => [name, keys]);
+      const selectedFacetsDictionary = Object.fromEntries(kvps);
+
+      return {
+        ...currentSearchOptions,
+        ...selectedFacetsDictionary,
+      };
+    });
+  };
 
   const onSearchSuccess = (data) => {
     setProducts(data.products);
@@ -69,7 +94,7 @@ export const App = () => {
         </StyledPageHeaderTop>
         <SearchBar onChange={onChangeSearchText} />
         <StyledFilterAndSortBy>
-          <FilterButton facets={facets} />
+          <FilterButton facets={facets} onToggleFacetValue={onToggleFacetValue} />
           <SortBy sortBy={sortByAsNumber(searchOptions.sortBy)} onChange={onChangeSortBy} />
         </StyledFilterAndSortBy>
         <NetworkActivityProgressBar />

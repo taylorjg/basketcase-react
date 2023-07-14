@@ -5,7 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Facet } from "./Facet";
 import { StyledFilterPanel, StyledFilterPanelHeader } from "./FilterPanel.styles";
 
-export const FilterPanel = ({ facets, onClose }) => {
+export const FilterPanel = ({ facets, onClose, onToggleFacetValue }) => {
   return (
     <StyledFilterPanel>
       <StyledFilterPanelHeader>
@@ -18,7 +18,7 @@ export const FilterPanel = ({ facets, onClose }) => {
       <ul>
         {facets.map((facet) => (
           <li key={facet.name}>
-            <Facet facet={facet} />
+            <Facet facet={facet} onToggleFacetValue={onToggleFacetValue} />
           </li>
         ))}
       </ul>
@@ -29,4 +29,7 @@ export const FilterPanel = ({ facets, onClose }) => {
 FilterPanel.propTypes = {
   facets: PropTypes.array.isRequired,
   onClose: PropTypes.func.isRequired,
+  onToggleFacetValue: PropTypes.func.isRequired,
+  // onResetFacet: PropTypes.func.isRequired,
+  // onResetAllFacets: PropTypes.func.isRequired,
 };
