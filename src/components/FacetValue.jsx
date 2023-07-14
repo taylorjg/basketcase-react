@@ -1,20 +1,23 @@
 import PropTypes from "prop-types";
+import { Checkbox, FormControlLabel, Typography } from "@mui/material";
+
+import { StyledFacetValue } from "./FacetValue.styles";
 
 export const FacetValue = ({ facet, facetValue, onToggleFacetValue }) => {
   const onClick = () => {
     onToggleFacetValue(facet.name, facetValue.key);
   };
 
+  const label = `${facetValue.displayName} (${facetValue.count})`;
+
   return (
-    <div>
-      <span
-        dangerouslySetInnerHTML={{ __html: facetValue.displayName }}
-        onClick={onClick}
-        style={{ color: facetValue.selected ? "green" : "red" }}
+    <StyledFacetValue>
+      <FormControlLabel
+        control={<Checkbox size="small" checked={facetValue.selected} onClick={onClick} />}
+        label={<Typography variant="subtitle2" dangerouslySetInnerHTML={{ __html: label }} />}
+        labelPlacement="end"
       />
-      <span>&nbsp;</span>
-      <span>({facetValue.count})</span>
-    </div>
+    </StyledFacetValue>
   );
 };
 

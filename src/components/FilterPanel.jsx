@@ -13,29 +13,30 @@ export const FilterPanel = ({
   onResetFacet,
   onToggleFacetValue,
 }) => {
+  const hasFacetsWithSelectedFacetValues = facets.some((facet) =>
+    facet.facetValues.some(({ selected }) => selected)
+  );
+
   return (
     <StyledFilterPanel>
       <StyledFilterPanelHeader>
-        <Typography variant="subtitle1" gutterBottom>
-          Filters
-        </Typography>
+        <Typography variant="h6">Filters</Typography>
         <CloseIcon onClick={onClose} />
       </StyledFilterPanelHeader>
       <Divider />
-      <StyledResetAll>
-        <DeleteOutlinedIcon onClick={onResetAllFacets} />
-      </StyledResetAll>
-      <ul>
-        {facets.map((facet) => (
-          <li key={facet.name}>
-            <Facet
-              facet={facet}
-              onResetFacet={onResetFacet}
-              onToggleFacetValue={onToggleFacetValue}
-            />
-          </li>
-        ))}
-      </ul>
+      {hasFacetsWithSelectedFacetValues && (
+        <StyledResetAll>
+          <DeleteOutlinedIcon onClick={onResetAllFacets} titleAccess="Clear All" />
+        </StyledResetAll>
+      )}
+      {facets.map((facet) => (
+        <Facet
+          key={facet.name}
+          facet={facet}
+          onResetFacet={onResetFacet}
+          onToggleFacetValue={onToggleFacetValue}
+        />
+      ))}
     </StyledFilterPanel>
   );
 };

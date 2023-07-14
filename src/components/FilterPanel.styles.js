@@ -17,5 +17,8 @@ export const StyledFilterPanelHeader = styled.div`
 export const StyledResetAll = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: calc(100% - 0.5rem);
+  margin: 0.5rem 0.5rem 0 0;
+  svg {
+    cursor: pointer;
+  }
 `;
