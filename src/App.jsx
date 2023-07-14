@@ -22,7 +22,9 @@ import {
 
 export const App = () => {
   const { showError } = useToast();
-  const [searchOptions, setSearchOptions] = useUrlState({ sortBy: undefined });
+  const [searchOptions, setSearchOptions] = useUrlState({
+    sortBy: undefined,
+  });
   const [products, setProducts] = useState([]);
   const [facets, setFacets] = useState([]);
 
@@ -30,15 +32,13 @@ export const App = () => {
     const newFacets = toggleFacetValue(facets, name, key);
     setFacets(newFacets);
     setSearchOptions((currentSearchOptions) => {
-      const filters = newFacets
-        .map((facet) => {
-          const selectedFacetValues = facet.facetValues.filter(({ selected }) => selected);
-          return {
-            name: facet.name,
-            keys: selectedFacetValues.map(({ key }) => key),
-          };
-        })
-        .filter(({ keys }) => keys.length > 0);
+      const filters = newFacets.map((facet) => {
+        const selectedFacetValues = facet.facetValues.filter(({ selected }) => selected);
+        return {
+          name: facet.name,
+          keys: selectedFacetValues.map(({ key }) => key),
+        };
+      });
 
       const kvps = filters.map(({ name, keys }) => [name, keys]);
       const selectedFacetsDictionary = Object.fromEntries(kvps);
