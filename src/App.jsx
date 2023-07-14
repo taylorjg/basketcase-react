@@ -11,8 +11,13 @@ import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
-import { sortByAsNumber, updatedSortBy, updatedSearchText } from "./searchOptionsUtils";
-import { toggleFacetValue } from "./facetTwiddling";
+import {
+  sortByAsNumber,
+  updatedFacets,
+  updatedSortBy,
+  updatedSearchText,
+} from "./searchOptionsUtils";
+import { resetAllFacets, resetFacet, toggleFacetValue } from "./facetTwiddling";
 import {
   StyledContainer,
   StyledFilterAndSortBy,
@@ -28,24 +33,35 @@ export const App = () => {
   const [products, setProducts] = useState([]);
   const [facets, setFacets] = useState([]);
 
+  const onResetAllFacets = () => {
+    const newFacets = resetAllFacets(facets);
+    setFacets(newFacets);
+    setSearchOptions((currentSearchOptions) => {
+      return {
+        ...currentSearchOptions,
+        ...updatedFacets(newFacets),
+      };
+    });
+  };
+
+  const onResetFacet = (name) => {
+    const newFacets = resetFacet(facets, name);
+    setFacets(newFacets);
+    setSearchOptions((currentSearchOptions) => {
+      return {
+        ...currentSearchOptions,
+        ...updatedFacets(newFacets),
+      };
+    });
+  };
+
   const onToggleFacetValue = (name, key) => {
     const newFacets = toggleFacetValue(facets, name, key);
     setFacets(newFacets);
     setSearchOptions((currentSearchOptions) => {
-      const filters = newFacets.map((facet) => {
-        const selectedFacetValues = facet.facetValues.filter(({ selected }) => selected);
-        return {
-          name: facet.name,
-          keys: selectedFacetValues.map(({ key }) => key),
-        };
-      });
-
-      const kvps = filters.map(({ name, keys }) => [name, keys]);
-      const selectedFacetsDictionary = Object.fromEntries(kvps);
-
       return {
         ...currentSearchOptions,
-        ...selectedFacetsDictionary,
+        ...updatedFacets(newFacets),
       };
     });
   };
@@ -94,7 +110,12 @@ export const App = () => {
         </StyledPageHeaderTop>
         <SearchBar onChange={onChangeSearchText} />
         <StyledFilterAndSortBy>
-          <FilterButton facets={facets} onToggleFacetValue={onToggleFacetValue} />
+          <FilterButton
+            facets={facets}
+            onResetAllFacets={onResetAllFacets}
+            onResetFacet={onResetFacet}
+            onToggleFacetValue={onToggleFacetValue}
+          />
           <SortBy sortBy={sortByAsNumber(searchOptions.sortBy)} onChange={onChangeSortBy} />
         </StyledFilterAndSortBy>
         <NetworkActivityProgressBar />

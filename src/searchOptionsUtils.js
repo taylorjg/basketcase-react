@@ -12,3 +12,18 @@ export const updatedSortBy = (sortBy) => {
 export const updatedSearchText = (searchText) => {
   return searchText ? searchText : undefined;
 };
+
+export const updatedFacets = (facets) => {
+  const filters = facets.map((facet) => {
+    const selectedFacetValues = facet.facetValues.filter(({ selected }) => selected);
+    return {
+      name: facet.name,
+      keys: selectedFacetValues.map(({ key }) => key),
+    };
+  });
+
+  const kvps = filters.map(({ name, keys }) => [name, keys]);
+  const selectedFacetsDictionary = Object.fromEntries(kvps);
+
+  return selectedFacetsDictionary;
+};

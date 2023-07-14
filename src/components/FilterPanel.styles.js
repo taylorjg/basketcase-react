@@ -13,3 +13,9 @@ export const StyledFilterPanelHeader = styled.div`
     cursor: pointer;
   }
 `;
+
+export const StyledResetAll = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100% - 0.5rem);
+`;
