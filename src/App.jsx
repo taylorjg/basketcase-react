@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
+import { Divider } from "@mui/material";
 
 import { useLazySearch } from "@app/hooks/use-search";
 import { useToast } from "@app/hooks/use-toast";
@@ -7,6 +8,7 @@ import { useToast } from "@app/hooks/use-toast";
 import { FilterButton } from "@app/components/FilterButton";
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
 import { Product } from "@app/components/Product";
+import { Results } from "@app/components/Results";
 import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
@@ -31,6 +33,7 @@ export const App = () => {
     sortBy: undefined,
   });
   const [products, setProducts] = useState([]);
+  const [total, setTotal] = useState(0);
   const [facets, setFacets] = useState([]);
 
   const onResetAllFacets = () => {
@@ -68,6 +71,7 @@ export const App = () => {
 
   const onSearchSuccess = (data) => {
     setProducts(data.products);
+    setTotal(data.total);
     setFacets(data.facets);
   };
 
@@ -108,6 +112,7 @@ export const App = () => {
         <StyledPageHeaderTop>
           <Version />
         </StyledPageHeaderTop>
+        <NetworkActivityProgressBar />
         <SearchBar onChange={onChangeSearchText} />
         <StyledFilterAndSortBy>
           <FilterButton
@@ -118,10 +123,13 @@ export const App = () => {
           />
           <SortBy sortBy={sortByAsNumber(searchOptions.sortBy)} onChange={onChangeSortBy} />
         </StyledFilterAndSortBy>
-        <NetworkActivityProgressBar />
+        <Results current={products.length} total={total} />
       </StyledPageHeader>
       {products.map((product) => (
-        <Product key={product.Code} product={product} />
+        <Fragment key={product.Code}>
+          <Product product={product} />
+          <Divider />
+        </Fragment>
       ))}
     </StyledContainer>
   );

@@ -1,9 +1,6 @@
 {
   "results": {
-    "total": {
-      "value": 60,
-      "relation": "eq"
-    },
+    "total": 60,
     "products": [
       {
         "Brand": "Beko",

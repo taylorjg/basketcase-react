@@ -3,8 +3,8 @@ import { Container } from "@mui/material";
 
 export const StyledContainer = styled(Container)`
   position: relative;
-  padding: 0.25rem;
   margin: 0 auto !important;
+  padding: 8px !important;
 `;
 
 export const StyledPageHeader = styled.div`

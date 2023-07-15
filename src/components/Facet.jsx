@@ -12,11 +12,12 @@ export const Facet = ({ facet, onResetFacet, onToggleFacetValue }) => {
     <StyledFacet>
       <StyledFacetHeader>
         <Typography variant="subtitle1">{facet.displayName}</Typography>
-        <DeleteOutlinedIcon
-          onClick={() => onResetFacet(facet.name)}
-          titleAccess={`Clear ${facet.displayName}`}
-          style={{ visibility: hasSelectedFacetValues ? "visible" : "hidden" }}
-        />
+        {hasSelectedFacetValues && (
+          <DeleteOutlinedIcon
+            onClick={() => onResetFacet(facet.name)}
+            titleAccess={`Clear ${facet.displayName}`}
+          />
+        )}
       </StyledFacetHeader>
       {facet.facetValues.map((facetValue) => (
         <FacetValue

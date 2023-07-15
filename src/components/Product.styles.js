@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
 export const StyledProduct = styled.div`
-  margin: 2rem 0;
+  margin: 1rem 0;
   display: flex;
-  row-gap: 1rem;
+  column-gap: 10px;
   width: 100%;
 `;
 

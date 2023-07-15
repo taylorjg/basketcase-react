@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Typography } from "@mui/material";
 
 import {
   StyledProduct,
@@ -26,10 +27,14 @@ export const Product = ({ product }) => {
       </StyledProductLeftPanel>
       <StyledProductCentrePanel>
         <StyledBrandImage src={brandImageUrl} />
-        <StyledProductDescription>{product.FullTitle}</StyledProductDescription>
+        <StyledProductDescription>
+          <Typography variant="body2">{product.FullTitle}</Typography>
+        </StyledProductDescription>
       </StyledProductCentrePanel>
       <StyledProductRightPanel>
-        <StyledPrice>&pound;{product.Price}</StyledPrice>
+        <StyledPrice>
+          <Typography>&pound;{product.Price}</Typography>
+        </StyledPrice>
       </StyledProductRightPanel>
     </StyledProduct>
   );

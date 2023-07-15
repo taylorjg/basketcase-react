@@ -22,9 +22,10 @@ const doSearch = async (searchOptions) => {
   const url = "/api/search";
   const refinedSearchOptions = refineSearchOptions(searchOptions);
   const response = await axios.post(url, refinedSearchOptions);
-  const facets = response.data.facets;
   const products = response.data.results.products;
-  return { products, facets };
+  const total = response.data.results.total;
+  const facets = response.data.facets;
+  return { products, total, facets };
 };
 
 const makeQueryOptions = (options) => {
