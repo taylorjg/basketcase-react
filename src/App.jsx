@@ -1,9 +1,10 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
 import { Divider } from "@mui/material";
 
 import { useLazySearch } from "@app/hooks/use-search";
 import { useToast } from "@app/hooks/use-toast";
+import { useIsActive } from "@app/hooks/use-is-active";
 
 import { FilterButton } from "@app/components/FilterButton";
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
@@ -29,16 +30,18 @@ import {
 
 export const App = () => {
   const { showError } = useToast();
-  const [searchOptions, setSearchOptions] = useUrlState({
-    sortBy: undefined,
-  });
+  const [searchOptions, setSearchOptions] = useUrlState({});
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const [facets, setFacets] = useState([]);
+  const observerTarget = useRef(null);
+  const isActive = useIsActive();
 
   const onResetAllFacets = () => {
     const newFacets = resetAllFacets(facets);
     setFacets(newFacets);
+    setCurrentPage(1);
     setSearchOptions((currentSearchOptions) => {
       return {
         ...currentSearchOptions,
@@ -50,6 +53,7 @@ export const App = () => {
   const onResetFacet = (name) => {
     const newFacets = resetFacet(facets, name);
     setFacets(newFacets);
+    setCurrentPage(1);
     setSearchOptions((currentSearchOptions) => {
       return {
         ...currentSearchOptions,
@@ -61,6 +65,7 @@ export const App = () => {
   const onToggleFacetValue = (name, key) => {
     const newFacets = toggleFacetValue(facets, name, key);
     setFacets(newFacets);
+    setCurrentPage(1);
     setSearchOptions((currentSearchOptions) => {
       return {
         ...currentSearchOptions,
@@ -70,7 +75,11 @@ export const App = () => {
   };
 
   const onSearchSuccess = (data) => {
-    setProducts(data.products);
+    if (currentPage === 1) {
+      setProducts(data.products);
+    } else {
+      setProducts((currentProducts) => [...currentProducts, ...data.products]);
+    }
     setTotal(data.total);
     setFacets(data.facets);
   };
@@ -89,10 +98,17 @@ export const App = () => {
   const { search } = useLazySearch(options);
 
   useEffect(() => {
-    search(searchOptions);
-  }, [search, searchOptions]);
+    if (currentPage === 1) {
+      setProducts([]);
+    }
+    search({
+      ...searchOptions,
+      currentPage,
+    });
+  }, [search, searchOptions, currentPage]);
 
   const onChangeSortBy = (sortBy) => {
+    setCurrentPage(1);
     setSearchOptions((currentSearchOptions) => ({
       ...currentSearchOptions,
       sortBy: updatedSortBy(sortBy),
@@ -100,11 +116,36 @@ export const App = () => {
   };
 
   const onChangeSearchText = (searchText) => {
+    setCurrentPage(1);
     setSearchOptions((currentSearchOptions) => ({
       ...currentSearchOptions,
       searchText: updatedSearchText(searchText),
     }));
   };
+
+  useEffect(() => {
+    const observerTargetCurrent = observerTarget.current;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          if (products.length < total && !isActive) {
+            setCurrentPage((currentPage) => currentPage + 1);
+          }
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (observerTargetCurrent) {
+      observer.observe(observerTargetCurrent);
+    }
+
+    return () => {
+      if (observerTargetCurrent) {
+        observer.unobserve(observerTargetCurrent);
+      }
+    };
+  }, [isActive, observerTarget, products.length, total]);
 
   return (
     <StyledContainer maxWidth="xs">
@@ -131,6 +172,7 @@ export const App = () => {
           <Divider />
         </Fragment>
       ))}
+      <div ref={observerTarget}></div>
     </StyledContainer>
   );
 };

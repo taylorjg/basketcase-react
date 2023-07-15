@@ -29,8 +29,7 @@ export const StyledProductImage = styled.img`
 `;
 
 export const StyledBrandImage = styled.img`
-  width: 50%;
-  align-self: center;
+  width: 35%;
 `;
 
 export const StyledProductDescription = styled.div``;
