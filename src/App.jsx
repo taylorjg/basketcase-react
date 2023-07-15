@@ -154,7 +154,7 @@ export const App = () => {
           <Version />
         </StyledPageHeaderTop>
         <NetworkActivityProgressBar />
-        <SearchBar onChange={onChangeSearchText} />
+        <SearchBar searchText={searchOptions.searchText ?? ""} onChange={onChangeSearchText} />
         <StyledFilterAndSortBy>
           <FilterButton
             facets={facets}

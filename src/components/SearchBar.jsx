@@ -1,27 +1,42 @@
 import PropTypes from "prop-types";
+import { IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import SearchIcon from "@mui/icons-material/Search";
 
-import { StyledSearchBar, StyledSearchIconWrapper, StyledInputBase } from "./SearchBar.styles";
+import { StyledSearchBar, StyledInputBase } from "./SearchBar.styles";
 
-export const SearchBar = ({ onChange }) => {
+export const SearchBar = ({ searchText, onChange }) => {
   const handleChange = (e) => {
     onChange(e.target.value);
   };
 
+  const onClear = () => {
+    onChange("");
+  };
+
   return (
     <StyledSearchBar>
-      <StyledSearchIconWrapper>
-        <SearchIcon />
-      </StyledSearchIconWrapper>
       <StyledInputBase
         placeholder="Search…"
         inputProps={{ "aria-label": "search" }}
+        value={searchText}
         onChange={handleChange}
+        startAdornment={
+          <IconButton>
+            <SearchIcon />
+          </IconButton>
+        }
+        endAdornment={
+          <IconButton onClick={onClear}>
+            <CloseIcon />
+          </IconButton>
+        }
       />
     </StyledSearchBar>
   );
 };
 
 SearchBar.propTypes = {
+  searchText: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
