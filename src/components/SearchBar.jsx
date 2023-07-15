@@ -11,7 +11,9 @@ export const SearchBar = ({ searchText, onChange }) => {
   };
 
   const onClear = () => {
-    onChange("");
+    if (searchText) {
+      onChange("");
+    }
   };
 
   return (
