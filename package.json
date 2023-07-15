@@ -2,7 +2,7 @@
   "name": "basketcase-react",
   "description": "Mock online store app selling washing machines with faceted navigation built using React, Serverless Framework and Elasticsearch",
   "private": true,
-  "version": "0.0.20",
+  "version": "0.0.21",
   "type": "module",
   "scripts": {
     "dev": "vite",
