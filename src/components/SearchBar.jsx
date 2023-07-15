@@ -21,11 +21,7 @@ export const SearchBar = ({ searchText, onChange }) => {
         inputProps={{ "aria-label": "search" }}
         value={searchText}
         onChange={handleChange}
-        startAdornment={
-          <IconButton>
-            <SearchIcon />
-          </IconButton>
-        }
+        startAdornment={<SearchIcon />}
         endAdornment={
           <IconButton onClick={onClear}>
             <CloseIcon />

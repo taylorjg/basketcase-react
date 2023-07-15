@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Divider, Typography } from "@mui/material";
+import { Divider, IconButton, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
@@ -21,12 +21,16 @@ export const FilterPanel = ({
     <StyledFilterPanel>
       <StyledFilterPanelHeader>
         <Typography variant="h6">Filters</Typography>
-        <CloseIcon onClick={onClose} />
+        <IconButton onClick={onClose}>
+          <CloseIcon />
+        </IconButton>
       </StyledFilterPanelHeader>
       <Divider />
       {hasFacetsWithSelectedFacetValues && (
         <StyledResetAll>
-          <DeleteOutlinedIcon onClick={onResetAllFacets} titleAccess="Clear All" />
+          <IconButton onClick={onResetAllFacets}>
+            <DeleteOutlinedIcon titleAccess="Clear All" />
+          </IconButton>
         </StyledResetAll>
       )}
       {facets.map((facet) => (

@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Divider, Typography } from "@mui/material";
+import { Divider, IconButton, Typography } from "@mui/material";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
 import { FacetValue } from "./FacetValue";
@@ -13,10 +13,9 @@ export const Facet = ({ facet, onResetFacet, onToggleFacetValue }) => {
       <StyledFacetHeader>
         <Typography variant="subtitle1">{facet.displayName}</Typography>
         {hasSelectedFacetValues && (
-          <DeleteOutlinedIcon
-            onClick={() => onResetFacet(facet.name)}
-            titleAccess={`Clear ${facet.displayName}`}
-          />
+          <IconButton onClick={() => onResetFacet(facet.name)}>
+            <DeleteOutlinedIcon titleAccess={`Clear ${facet.displayName}`} />
+          </IconButton>
         )}
       </StyledFacetHeader>
       {facet.facetValues.map((facetValue) => (
