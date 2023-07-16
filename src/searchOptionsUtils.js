@@ -18,7 +18,7 @@ export const updatedFacets = (facets) => {
     const selectedFacetValues = facet.facetValues.filter(({ selected }) => selected);
     return {
       name: facet.name,
-      keys: selectedFacetValues.map(({ key }) => key),
+      keys: selectedFacetValues.map(({ altKey }) => altKey),
     };
   });
 
