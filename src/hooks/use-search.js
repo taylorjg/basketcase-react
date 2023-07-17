@@ -14,7 +14,6 @@ const refineSearchOptions = (searchOptions) => {
     ...searchOptions,
     ...forceConversionToNumber(searchOptions, "pageSize"),
     ...forceConversionToNumber(searchOptions, "currentPage"),
-    ...forceConversionToNumber(searchOptions, "sortBy"),
   };
 };
 

@@ -12,15 +12,15 @@ export const SortBy = ({ sortBy, onChange }) => {
         onChange(e.target.value);
       }}
     >
-      <MenuItem value={0}>Price low to high</MenuItem>
-      <MenuItem value={1}>Price high to low</MenuItem>
-      <MenuItem value={2}>Average rating</MenuItem>
-      <MenuItem value={3}>Review count</MenuItem>
+      <MenuItem value={"price-low-to-high"}>Price low to high</MenuItem>
+      <MenuItem value={"price-high-to-low"}>Price high to low</MenuItem>
+      <MenuItem value={"average-rating"}>Average rating</MenuItem>
+      <MenuItem value={"review-count"}>Review count</MenuItem>
     </Select>
   );
 };
 
 SortBy.propTypes = {
-  sortBy: PropTypes.number.isRequired,
+  sortBy: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

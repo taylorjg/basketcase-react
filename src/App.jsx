@@ -15,10 +15,10 @@ import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
 import {
-  sortByAsNumber,
   updatedFacets,
   updatedSortBy,
   updatedSearchText,
+  DEFAULT_SORT_BY,
 } from "./searchOptionsUtils";
 import { resetAllFacets, resetFacet, toggleFacetValue } from "./facetTwiddling";
 import {
@@ -30,11 +30,11 @@ import {
 
 export const App = () => {
   const { showError } = useToast();
-  const [searchOptions, setSearchOptions] = useUrlState({});
+  const [searchOptions, setSearchOptions] = useUrlState({ sortBy: DEFAULT_SORT_BY });
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
   const [facets, setFacets] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
   const observerTarget = useRef(null);
   const isActive = useIsActive();
 
@@ -162,7 +162,7 @@ export const App = () => {
             onResetFacet={onResetFacet}
             onToggleFacetValue={onToggleFacetValue}
           />
-          <SortBy sortBy={sortByAsNumber(searchOptions.sortBy)} onChange={onChangeSortBy} />
+          <SortBy sortBy={searchOptions.sortBy} onChange={onChangeSortBy} />
         </StyledFilterAndSortBy>
         <Results current={products.length} total={total} />
       </StyledPageHeader>

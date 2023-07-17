@@ -1,12 +1,12 @@
-const DEFAULT_SORT_BY = 0;
+export const SORT_BY_PRICE_LOW_TO_HIGH = "price-low-to-high";
+export const SORT_BY_PRICE_HIGH_TO_LOW = "price-high-to-low";
+export const SORT_BY_AVERAGE_RATING = "average-rating";
+export const SORT_BY_REVIEW_COUNT = "review-count";
 
-export const sortByAsNumber = (sortBy) => {
-  return Number(sortBy ?? DEFAULT_SORT_BY);
-};
+export const DEFAULT_SORT_BY = SORT_BY_PRICE_LOW_TO_HIGH;
 
 export const updatedSortBy = (sortBy) => {
-  const sortByAsNumber = Number(sortBy);
-  return sortByAsNumber === DEFAULT_SORT_BY ? undefined : sortByAsNumber;
+  return sortBy === DEFAULT_SORT_BY ? undefined : sortBy;
 };
 
 export const updatedSearchText = (searchText) => {

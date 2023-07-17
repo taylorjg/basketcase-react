@@ -38,7 +38,7 @@ describe("App test suite", () => {
   });
 
   it("URL state is reflected in the UI state", async () => {
-    renderApp("/?sortBy=1");
+    renderApp("/?sortBy=price-high-to-low");
 
     const productDescriptions = [
       "LG TrueSteam™ F14U1JBS8 10Kg Washing Machine with 1400 rpm - Black", // product 1
@@ -66,6 +66,6 @@ describe("App test suite", () => {
     expect(await screen.findByText(productDescription2)).toBeInTheDocument();
 
     expect(router.state.location.pathname).toBe("/");
-    expect(router.state.location.search).toBe("?sortBy=1");
+    expect(router.state.location.search).toBe("?sortBy=price-high-to-low");
   });
 });
