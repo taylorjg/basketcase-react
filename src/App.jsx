@@ -30,7 +30,7 @@ import {
 
 export const App = () => {
   const { showError } = useToast();
-  const [searchOptions, setSearchOptions] = useUrlState({ sortBy: DEFAULT_SORT_BY });
+  const [searchOptions, setSearchOptions] = useUrlState({});
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [facets, setFacets] = useState([]);
@@ -162,7 +162,7 @@ export const App = () => {
             onResetFacet={onResetFacet}
             onToggleFacetValue={onToggleFacetValue}
           />
-          <SortBy sortBy={searchOptions.sortBy} onChange={onChangeSortBy} />
+          <SortBy sortBy={searchOptions.sortBy ?? DEFAULT_SORT_BY} onChange={onChangeSortBy} />
         </StyledFilterAndSortBy>
         <Results current={products.length} total={total} />
       </StyledPageHeader>
