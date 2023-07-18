@@ -6,6 +6,14 @@ import { useLazySearch } from "@app/hooks/use-search";
 import { useToast } from "@app/hooks/use-toast";
 import { useIsActive } from "@app/hooks/use-is-active";
 
+import {
+  updatedFacets,
+  updatedSortBy,
+  updatedSearchText,
+  DEFAULT_SORT_BY,
+} from "@app/helpers/search-options-helpers";
+import { resetAllFacets, resetFacet, toggleFacetValue } from "@app/helpers/facet-helpers";
+
 import { FilterButton } from "@app/components/FilterButton";
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
 import { Product } from "@app/components/Product";
@@ -14,13 +22,6 @@ import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
-import {
-  updatedFacets,
-  updatedSortBy,
-  updatedSearchText,
-  DEFAULT_SORT_BY,
-} from "./searchOptionsUtils";
-import { resetAllFacets, resetFacet, toggleFacetValue } from "./facetTwiddling";
 import {
   StyledContainer,
   StyledFilterAndSortBy,
