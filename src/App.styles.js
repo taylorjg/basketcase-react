@@ -19,8 +19,13 @@ export const StyledPageHeader = styled.div`
 
 export const StyledPageHeaderTop = styled.div`
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+
+export const StyledLogo = styled.img`
+  height: 2.5rem;
+  cursor: pointer;
 `;
 
 export const StyledFilterAndSortBy = styled.div`

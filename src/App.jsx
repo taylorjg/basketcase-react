@@ -24,6 +24,7 @@ import { resetAllFacets, resetFacet, toggleFacetValue } from "./facetTwiddling";
 import {
   StyledContainer,
   StyledFilterAndSortBy,
+  StyledLogo,
   StyledPageHeader,
   StyledPageHeaderTop,
 } from "./App.styles";
@@ -123,6 +124,15 @@ export const App = () => {
     }));
   };
 
+  const onReset = () => {
+    setCurrentPage(1);
+    setSearchOptions((currentSearchOptions) => {
+      const keys = Object.keys(currentSearchOptions);
+      const kvps = keys.map((key) => [key, undefined]);
+      return Object.fromEntries(kvps);
+    });
+  };
+
   useEffect(() => {
     const observerTargetCurrent = observerTarget.current;
     const observer = new IntersectionObserver(
@@ -151,6 +161,7 @@ export const App = () => {
     <StyledContainer maxWidth="xs">
       <StyledPageHeader>
         <StyledPageHeaderTop>
+          <StyledLogo src="assets/logo.png" alt="BasketCase logo" onClick={onReset} />
           <Version />
         </StyledPageHeaderTop>
         <NetworkActivityProgressBar />
