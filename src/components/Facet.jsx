@@ -13,7 +13,7 @@ export const Facet = ({ facet, onResetFacet, onToggleFacetValue }) => {
       <StyledFacetHeader>
         <Typography variant="subtitle1">{facet.displayName}</Typography>
         {hasSelectedFacetValues && (
-          <IconButton onClick={() => onResetFacet(facet.name)}>
+          <IconButton onClick={() => onResetFacet(facet.name)} color="error">
             <DeleteOutlinedIcon titleAccess={`Clear ${facet.displayName}`} />
           </IconButton>
         )}

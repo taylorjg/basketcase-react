@@ -28,7 +28,7 @@ export const FilterPanel = ({
       <Divider />
       {hasFacetsWithSelectedFacetValues && (
         <StyledResetAll>
-          <IconButton onClick={onResetAllFacets}>
+          <IconButton onClick={onResetAllFacets} color="error">
             <DeleteOutlinedIcon titleAccess="Clear All" />
           </IconButton>
         </StyledResetAll>
