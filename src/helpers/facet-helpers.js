@@ -1,3 +1,18 @@
+export const resetFacetValue = (facets, name, key) =>
+  facets.map((facet) => (facet.name === name ? resetFacetValueInternal(facet, key) : facet));
+
+const resetFacetValueInternal = (facet, key) => ({
+  ...facet,
+  facetValues: facet.facetValues.map((facetValue) =>
+    facetValue.key === key
+      ? {
+          ...facetValue,
+          selected: false,
+        }
+      : facetValue
+  ),
+});
+
 export const resetFacet = (facets, name) =>
   facets.map((facet) => (facet.name === name ? resetFacetInternal(facet) : facet));
 

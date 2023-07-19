@@ -265,7 +265,7 @@
       "facetValues": [
         {
           "index": 0,
-          "displayName": "&pound;200 or less",
+          "displayName": "£200 or less",
           "key": "*-200.0",
           "count": 4,
           "selected": false,
@@ -273,7 +273,7 @@
         },
         {
           "index": 1,
-          "displayName": "&pound;200 - &pound;250",
+          "displayName": "£200 - £250",
           "key": "200.0-250.0",
           "count": 10,
           "selected": false,
@@ -282,7 +282,7 @@
         },
         {
           "index": 2,
-          "displayName": "&pound;250 - &pound;300",
+          "displayName": "£250 - £300",
           "key": "250.0-300.0",
           "count": 15,
           "selected": false,
@@ -291,7 +291,7 @@
         },
         {
           "index": 3,
-          "displayName": "&pound;300 - &pound;350",
+          "displayName": "£300 - £350",
           "key": "300.0-350.0",
           "count": 8,
           "selected": false,
@@ -300,7 +300,7 @@
         },
         {
           "index": 4,
-          "displayName": "&pound;350 - &pound;400",
+          "displayName": "£350 - £400",
           "key": "350.0-400.0",
           "count": 11,
           "selected": false,
@@ -309,7 +309,7 @@
         },
         {
           "index": 5,
-          "displayName": "&pound;400 - &pound;450",
+          "displayName": "£400 - £450",
           "key": "400.0-450.0",
           "count": 2,
           "selected": false,
@@ -318,7 +318,7 @@
         },
         {
           "index": 6,
-          "displayName": "&pound;450 - &pound;500",
+          "displayName": "£450 - £500",
           "key": "450.0-500.0",
           "count": 1,
           "selected": false,
@@ -327,7 +327,7 @@
         },
         {
           "index": 7,
-          "displayName": "&pound;550 - &pound;600",
+          "displayName": "£550 - £600",
           "key": "550.0-600.0",
           "count": 5,
           "selected": false,
@@ -336,7 +336,7 @@
         },
         {
           "index": 8,
-          "displayName": "&pound;600 - &pound;650",
+          "displayName": "£600 - £650",
           "key": "600.0-650.0",
           "count": 1,
           "selected": false,
@@ -345,7 +345,7 @@
         },
         {
           "index": 9,
-          "displayName": "&pound;650 or more",
+          "displayName": "£650 or more",
           "key": "650.0-*",
           "count": 3,
           "selected": false,

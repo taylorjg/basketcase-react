@@ -12,8 +12,14 @@ import {
   updatedSearchText,
   DEFAULT_SORT_BY,
 } from "@app/helpers/search-options-helpers";
-import { resetAllFacets, resetFacet, toggleFacetValue } from "@app/helpers/facet-helpers";
+import {
+  resetAllFacets,
+  resetFacet,
+  resetFacetValue,
+  toggleFacetValue,
+} from "@app/helpers/facet-helpers";
 
+import { AppliedFilters } from "@app/components/AppliedFilters";
 import { FilterButton } from "@app/components/FilterButton";
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
 import { Product } from "@app/components/Product";
@@ -54,6 +60,18 @@ export const App = () => {
 
   const onResetFacet = (name) => {
     const newFacets = resetFacet(facets, name);
+    setFacets(newFacets);
+    setCurrentPage(1);
+    setSearchOptions((currentSearchOptions) => {
+      return {
+        ...currentSearchOptions,
+        ...updatedFacets(newFacets),
+      };
+    });
+  };
+
+  const onResetFacetValue = (name, key) => {
+    const newFacets = resetFacetValue(facets, name, key);
     setFacets(newFacets);
     setCurrentPage(1);
     setSearchOptions((currentSearchOptions) => {
@@ -167,6 +185,7 @@ export const App = () => {
         </StyledPageHeaderTop>
         <NetworkActivityProgressBar />
         <SearchBar searchText={searchOptions.searchText ?? ""} onChange={onChangeSearchText} />
+        <AppliedFilters facets={facets} onResetFacetValue={onResetFacetValue} />
         <StyledFilterAndSortBy>
           <FilterButton
             facets={facets}

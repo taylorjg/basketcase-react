@@ -33,7 +33,7 @@ export const Product = ({ product }) => {
       </StyledProductCentrePanel>
       <StyledProductRightPanel>
         <StyledPrice>
-          <Typography>&pound;{product.Price}</Typography>
+          <Typography>£{product.Price}</Typography>
         </StyledPrice>
       </StyledProductRightPanel>
     </StyledProduct>
