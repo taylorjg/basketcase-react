@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Global } from "@emotion/react";
@@ -24,14 +24,15 @@ const queryClient = new QueryClient({
 });
 
 ReactDOM.createRoot(root).render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <Global styles={GlobalStyles} />
-      <ToastProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ToastProvider>
-    </QueryClientProvider>
-  </React.StrictMode>
+  // https://stackoverflow.com/a/60619061
+  // <React.StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <Global styles={GlobalStyles} />
+    <ToastProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ToastProvider>
+  </QueryClientProvider>
+  // </React.StrictMode>
 );

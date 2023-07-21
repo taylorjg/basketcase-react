@@ -46,8 +46,8 @@ export const App = () => {
   const observerTarget = useRef(null);
   const isActive = useIsActive();
 
-  const onResetAllFacets = () => {
-    const newFacets = resetAllFacets(facets);
+  const changeFacets = (fn) => {
+    const newFacets = fn(facets);
     setFacets(newFacets);
     setCurrentPage(1);
     setSearchOptions((currentSearchOptions) => {
@@ -56,42 +56,22 @@ export const App = () => {
         ...updatedFacets(newFacets),
       };
     });
+  };
+
+  const onResetAllFacets = () => {
+    changeFacets((facets) => resetAllFacets(facets));
   };
 
   const onResetFacet = (name) => {
-    const newFacets = resetFacet(facets, name);
-    setFacets(newFacets);
-    setCurrentPage(1);
-    setSearchOptions((currentSearchOptions) => {
-      return {
-        ...currentSearchOptions,
-        ...updatedFacets(newFacets),
-      };
-    });
+    changeFacets((facets) => resetFacet(facets, name));
   };
 
   const onResetFacetValue = (name, key) => {
-    const newFacets = resetFacetValue(facets, name, key);
-    setFacets(newFacets);
-    setCurrentPage(1);
-    setSearchOptions((currentSearchOptions) => {
-      return {
-        ...currentSearchOptions,
-        ...updatedFacets(newFacets),
-      };
-    });
+    changeFacets((facets) => resetFacetValue(facets, name, key));
   };
 
   const onToggleFacetValue = (name, key) => {
-    const newFacets = toggleFacetValue(facets, name, key);
-    setFacets(newFacets);
-    setCurrentPage(1);
-    setSearchOptions((currentSearchOptions) => {
-      return {
-        ...currentSearchOptions,
-        ...updatedFacets(newFacets),
-      };
-    });
+    changeFacets((facets) => toggleFacetValue(facets, name, key));
   };
 
   const onSearchSuccess = (data) => {
@@ -106,6 +86,7 @@ export const App = () => {
 
   const onSearchError = (error) => {
     setProducts([]);
+    setTotal(0);
     setFacets([]);
     showError(`Failed to load products: ${error.message}`);
   };
