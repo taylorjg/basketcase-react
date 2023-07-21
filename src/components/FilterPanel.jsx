@@ -1,10 +1,9 @@
 import PropTypes from "prop-types";
 import { Divider, IconButton, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
-import { Facet } from "./Facet";
-import { StyledFilterPanel, StyledFilterPanelHeader, StyledResetAll } from "./FilterPanel.styles";
+import { FilterPanelContent } from "./FilterPanelContent";
+import { StyledFilterPanel, StyledFilterPanelHeader } from "./FilterPanel.styles";
 
 export const FilterPanel = ({
   facets,
@@ -13,10 +12,6 @@ export const FilterPanel = ({
   onResetFacet,
   onToggleFacetValue,
 }) => {
-  const hasFacetsWithSelectedFacetValues = facets.some((facet) =>
-    facet.facetValues.some(({ selected }) => selected)
-  );
-
   return (
     <StyledFilterPanel>
       <StyledFilterPanelHeader>
@@ -26,21 +21,12 @@ export const FilterPanel = ({
         </IconButton>
       </StyledFilterPanelHeader>
       <Divider />
-      {hasFacetsWithSelectedFacetValues && (
-        <StyledResetAll>
-          <IconButton onClick={onResetAllFacets} color="error">
-            <DeleteOutlinedIcon titleAccess="Clear All" />
-          </IconButton>
-        </StyledResetAll>
-      )}
-      {facets.map((facet) => (
-        <Facet
-          key={facet.name}
-          facet={facet}
-          onResetFacet={onResetFacet}
-          onToggleFacetValue={onToggleFacetValue}
-        />
-      ))}
+      <FilterPanelContent
+        facets={facets}
+        onResetAllFacets={onResetAllFacets}
+        onResetFacet={onResetFacet}
+        onToggleFacetValue={onToggleFacetValue}
+      />
     </StyledFilterPanel>
   );
 };
