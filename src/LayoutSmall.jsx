@@ -11,12 +11,8 @@ import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
-import {
-  StyledFilterAndSortBy,
-  StyledLogo,
-  StyledPageHeader,
-  StyledPageHeaderTop,
-} from "./App.styles";
+import { StyledLogo, StyledPageHeader, StyledPageHeaderTop } from "./LayoutCommon.styles";
+import { StyledFilterButtonAndSortByRow } from "./LayoutSmall.styles";
 
 export const LayoutSmall = ({
   searchText,
@@ -42,7 +38,7 @@ export const LayoutSmall = ({
         <NetworkActivityProgressBar />
         <SearchBar searchText={searchText} onChange={onChangeSearchText} />
         <AppliedFilters facets={facets} onResetFacetValue={onResetFacetValue} />
-        <StyledFilterAndSortBy>
+        <StyledFilterButtonAndSortByRow>
           <FilterButton
             facets={facets}
             onResetAllFacets={onResetAllFacets}
@@ -50,7 +46,7 @@ export const LayoutSmall = ({
             onToggleFacetValue={onToggleFacetValue}
           />
           <SortBy sortBy={sortBy} onChange={onChangeSortBy} />
-        </StyledFilterAndSortBy>
+        </StyledFilterButtonAndSortByRow>
         <Results current={products.length} total={total} />
       </StyledPageHeader>
       {products.map((product) => (

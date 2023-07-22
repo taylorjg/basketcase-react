@@ -11,7 +11,15 @@ import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
-import { StyledLayoutBig, StyledLogo, StyledPageHeader, StyledPageHeaderTop } from "./App.styles";
+import { StyledLogo, StyledPageHeader, StyledPageHeaderTop } from "./LayoutCommon.styles";
+import {
+  StyledLayoutBig,
+  StyledLayoutBigFilters,
+  StyledLayoutBigResults,
+  StyledSearchAndSortRow,
+  StyledSearchAndSortRowLeft,
+  StyledSearchAndSortRowRight,
+} from "./LayoutBig.styles";
 
 export const LayoutBig = ({
   searchText,
@@ -36,33 +44,33 @@ export const LayoutBig = ({
         </StyledPageHeaderTop>
         <NetworkActivityProgressBar />
         <AppliedFilters facets={facets} onResetFacetValue={onResetFacetValue} />
-        <div style={{ display: "flex", columnGap: "0.5rem" }}>
-          <div style={{ flex: 3 }}>
+        <StyledSearchAndSortRow>
+          <StyledSearchAndSortRowLeft>
             <SearchBar searchText={searchText} onChange={onChangeSearchText} />
-          </div>
-          <div style={{ flex: 1 }}>
+          </StyledSearchAndSortRowLeft>
+          <StyledSearchAndSortRowRight>
             <SortBy sortBy={sortBy} onChange={onChangeSortBy} />
-          </div>
-        </div>
+          </StyledSearchAndSortRowRight>
+        </StyledSearchAndSortRow>
         <Results current={products.length} total={total} />
       </StyledPageHeader>
       <StyledLayoutBig>
-        <div style={{ flex: 1 }}>
+        <StyledLayoutBigFilters>
           <FilterPanelContent
             facets={facets}
             onResetAllFacets={onResetAllFacets}
             onResetFacet={onResetFacet}
             onToggleFacetValue={onToggleFacetValue}
           />
-        </div>
-        <div style={{ flex: 2 }}>
+        </StyledLayoutBigFilters>
+        <StyledLayoutBigResults>
           {products.map((product) => (
             <Fragment key={product.Code}>
               <Product product={product} />
               <Divider />
             </Fragment>
           ))}
-        </div>
+        </StyledLayoutBigResults>
       </StyledLayoutBig>
     </>
   );
