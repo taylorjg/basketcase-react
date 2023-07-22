@@ -1,6 +1,6 @@
-import { Fragment, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
-import { Divider } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 import { useLazySearch } from "@app/hooks/use-search";
 import { useToast } from "@app/hooks/use-toast";
@@ -19,22 +19,9 @@ import {
   toggleFacetValue,
 } from "@app/helpers/facet-helpers";
 
-import { AppliedFilters } from "@app/components/AppliedFilters";
-import { FilterButton } from "@app/components/FilterButton";
-import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
-import { Product } from "@app/components/Product";
-import { Results } from "@app/components/Results";
-import { SearchBar } from "@app/components/SearchBar";
-import { SortBy } from "@app/components/SortBy";
-import { Version } from "@app/components/Version";
-
-import {
-  StyledContainer,
-  StyledFilterAndSortBy,
-  StyledLogo,
-  StyledPageHeader,
-  StyledPageHeaderTop,
-} from "./App.styles";
+import { LayoutBig } from "./LayoutBig";
+import { LayoutSmall } from "./LayoutSmall";
+import { StyledContainer } from "./App.styles";
 
 export const App = () => {
   const { showError } = useToast();
@@ -45,6 +32,9 @@ export const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const observerTarget = useRef(null);
   const isActive = useIsActive();
+
+  const theme = useTheme();
+  const mdOrBigger = useMediaQuery(theme.breakpoints.up("md"));
 
   const changeFacets = (fn) => {
     const newFacets = fn(facets);
@@ -75,11 +65,7 @@ export const App = () => {
   };
 
   const onSearchSuccess = (data) => {
-    if (currentPage === 1) {
-      setProducts(data.products);
-    } else {
-      setProducts((currentProducts) => [...currentProducts, ...data.products]);
-    }
+    setProducts((currentProducts) => [...currentProducts, ...data.products]);
     setTotal(data.total);
     setFacets(data.facets);
   };
@@ -101,6 +87,7 @@ export const App = () => {
   useEffect(() => {
     if (currentPage === 1) {
       setProducts([]);
+      window.scrollTo(0, 0);
     }
     search({
       ...searchOptions,
@@ -135,9 +122,10 @@ export const App = () => {
 
   useEffect(() => {
     const observerTargetCurrent = observerTarget.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        if (entries.length === 1 && entries[0].isIntersecting) {
           if (products.length < total && !isActive) {
             setCurrentPage((currentPage) => currentPage + 1);
           }
@@ -155,36 +143,33 @@ export const App = () => {
         observer.unobserve(observerTargetCurrent);
       }
     };
-  }, [isActive, observerTarget, products.length, total]);
+  }, [isActive, products.length, total]);
+
+  const searchText = searchOptions.searchText ?? "";
+  const sortBy = searchOptions.sortBy ?? DEFAULT_SORT_BY;
+
+  const layoutProps = {
+    searchText,
+    sortBy,
+    products,
+    total,
+    facets,
+    onReset,
+    onResetAllFacets,
+    onResetFacet,
+    onResetFacetValue,
+    onToggleFacetValue,
+    onChangeSearchText,
+    onChangeSortBy,
+  };
+
+  const maxWidth = mdOrBigger ? "md" : "xs";
+  const Layout = mdOrBigger ? LayoutBig : LayoutSmall;
 
   return (
-    <StyledContainer maxWidth="xs">
-      <StyledPageHeader>
-        <StyledPageHeaderTop>
-          <StyledLogo src="assets/logo.png" alt="BasketCase logo" onClick={onReset} />
-          <Version />
-        </StyledPageHeaderTop>
-        <NetworkActivityProgressBar />
-        <SearchBar searchText={searchOptions.searchText ?? ""} onChange={onChangeSearchText} />
-        <AppliedFilters facets={facets} onResetFacetValue={onResetFacetValue} />
-        <StyledFilterAndSortBy>
-          <FilterButton
-            facets={facets}
-            onResetAllFacets={onResetAllFacets}
-            onResetFacet={onResetFacet}
-            onToggleFacetValue={onToggleFacetValue}
-          />
-          <SortBy sortBy={searchOptions.sortBy ?? DEFAULT_SORT_BY} onChange={onChangeSortBy} />
-        </StyledFilterAndSortBy>
-        <Results current={products.length} total={total} />
-      </StyledPageHeader>
-      {products.map((product) => (
-        <Fragment key={product.Code}>
-          <Product product={product} />
-          <Divider />
-        </Fragment>
-      ))}
-      <div ref={observerTarget}></div>
+    <StyledContainer maxWidth={maxWidth}>
+      <Layout {...layoutProps} />
+      <div ref={observerTarget} />
     </StyledContainer>
   );
 };

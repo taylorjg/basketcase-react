@@ -15,3 +15,7 @@ afterEach(() => {
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
+
+beforeAll(() => {
+  window.scrollTo = () => {};
+});

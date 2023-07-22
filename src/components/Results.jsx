@@ -8,10 +8,8 @@ import { StyledResults } from "./Results.styles";
 export const Results = ({ current, total }) => {
   const isActive = useIsActive();
 
-  if (isActive) return null;
-
   return (
-    <StyledResults>
+    <StyledResults isActive={isActive}>
       <Typography>
         Results: showing {current} of {total}
       </Typography>

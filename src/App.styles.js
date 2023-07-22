@@ -33,3 +33,7 @@ export const StyledFilterAndSortBy = styled.div`
   grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
 `;
+
+export const StyledLayoutBig = styled.div`
+  display: flex;
+`;
