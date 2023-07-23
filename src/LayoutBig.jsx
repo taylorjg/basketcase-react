@@ -1,12 +1,10 @@
-import { Fragment } from "react";
 import PropTypes from "prop-types";
-import { Divider } from "@mui/material";
 
 import { AppliedFilters } from "@app/components/AppliedFilters";
 import { FilterPanelContent } from "@app/components/FilterPanelContent";
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
-import { Product } from "@app/components/Product";
-import { Results } from "@app/components/Results";
+import { Products } from "@app/components/Products";
+import { ResultsCount } from "@app/components/ResultsCount";
 import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
@@ -52,7 +50,7 @@ export const LayoutBig = ({
             <SortBy sortBy={sortBy} onChange={onChangeSortBy} />
           </StyledSearchAndSortRowRight>
         </StyledSearchAndSortRow>
-        <Results current={products.length} total={total} />
+        <ResultsCount current={products.length} total={total} />
       </StyledPageHeader>
       <StyledLayoutBig>
         <StyledLayoutBigFilters>
@@ -64,12 +62,7 @@ export const LayoutBig = ({
           />
         </StyledLayoutBigFilters>
         <StyledLayoutBigResults>
-          {products.map((product) => (
-            <Fragment key={product.Code}>
-              <Product product={product} />
-              <Divider />
-            </Fragment>
-          ))}
+          <Products products={products} />
         </StyledLayoutBigResults>
       </StyledLayoutBig>
     </>

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const StyledResults = styled.div`
+export const StyledResultsCount = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;

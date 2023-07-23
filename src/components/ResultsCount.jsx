@@ -3,21 +3,21 @@ import { Typography } from "@mui/material";
 
 import { useIsActive } from "@app/hooks/use-is-active";
 
-import { StyledResults } from "./Results.styles";
+import { StyledResultsCount } from "./ResultsCount.styles";
 
-export const Results = ({ current, total }) => {
+export const ResultsCount = ({ current, total }) => {
   const isActive = useIsActive();
 
   return (
-    <StyledResults isActive={isActive}>
+    <StyledResultsCount isActive={isActive}>
       <Typography>
         Results: showing {current} of {total}
       </Typography>
-    </StyledResults>
+    </StyledResultsCount>
   );
 };
 
-Results.propTypes = {
+ResultsCount.propTypes = {
   current: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
 };
