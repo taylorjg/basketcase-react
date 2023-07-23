@@ -10,6 +10,7 @@ export const FilterPanelContent = ({
   onResetAllFacets,
   onResetFacet,
   onToggleFacetValue,
+  showResetAll = false,
 }) => {
   const hasFacetsWithSelectedFacetValues = facets.some((facet) =>
     facet.facetValues.some(({ selected }) => selected)
@@ -17,7 +18,7 @@ export const FilterPanelContent = ({
 
   return (
     <>
-      {hasFacetsWithSelectedFacetValues && (
+      {showResetAll && hasFacetsWithSelectedFacetValues && (
         <StyledResetAll>
           <IconButton onClick={onResetAllFacets} color="error">
             <DeleteOutlinedIcon titleAccess="Clear All" />
@@ -41,4 +42,5 @@ FilterPanelContent.propTypes = {
   onResetAllFacets: PropTypes.func.isRequired,
   onResetFacet: PropTypes.func.isRequired,
   onToggleFacetValue: PropTypes.func.isRequired,
+  showResetAll: PropTypes.bool,
 };
