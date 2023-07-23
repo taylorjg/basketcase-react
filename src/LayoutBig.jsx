@@ -11,9 +11,9 @@ import { Version } from "@app/components/Version";
 
 import { StyledLogo, StyledPageHeader, StyledPageHeaderTop } from "./LayoutCommon.styles";
 import {
-  StyledLayoutBig,
-  StyledLayoutBigFilters,
-  StyledLayoutBigResults,
+  StyledPageContent,
+  StyledFilters,
+  StyledResults,
   StyledSearchAndSortRow,
   StyledSearchAndSortRowLeft,
   StyledSearchAndSortRowRight,
@@ -52,19 +52,19 @@ export const LayoutBig = ({
         </StyledSearchAndSortRow>
         <ResultsCount current={products.length} total={total} />
       </StyledPageHeader>
-      <StyledLayoutBig>
-        <StyledLayoutBigFilters>
+      <StyledPageContent>
+        <StyledFilters>
           <FilterPanelContent
             facets={facets}
             onResetAllFacets={onResetAllFacets}
             onResetFacet={onResetFacet}
             onToggleFacetValue={onToggleFacetValue}
           />
-        </StyledLayoutBigFilters>
-        <StyledLayoutBigResults>
+        </StyledFilters>
+        <StyledResults>
           <Products products={products} />
-        </StyledLayoutBigResults>
-      </StyledLayoutBig>
+        </StyledResults>
+      </StyledPageContent>
     </>
   );
 };

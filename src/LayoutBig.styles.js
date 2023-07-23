@@ -13,14 +13,14 @@ export const StyledSearchAndSortRowRight = styled.div`
   flex: 1;
 `;
 
-export const StyledLayoutBig = styled.div`
+export const StyledPageContent = styled.div`
   display: flex;
 `;
 
-export const StyledLayoutBigFilters = styled.div`
+export const StyledFilters = styled.div`
   flex: 1;
 `;
 
-export const StyledLayoutBigResults = styled.div`
+export const StyledResults = styled.div`
   flex: 2;
 `;
