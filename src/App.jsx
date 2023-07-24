@@ -2,9 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
 import { useMediaQuery, useTheme } from "@mui/material";
 
+import { useInfiniteScroll } from "@app/hooks/use-infinite-scroll";
+import { useIsActive } from "@app/hooks/use-is-active";
 import { useLazySearch } from "@app/hooks/use-search";
 import { useToast } from "@app/hooks/use-toast";
-import { useIsActive } from "@app/hooks/use-is-active";
 
 import {
   updatedFacets,
@@ -31,11 +32,6 @@ export const App = () => {
   const [facets, setFacets] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const isActive = useIsActive();
-
-  const [observerTarget, setObserverTarget] = useState();
-  const observerTargetRefFn = (element) => {
-    setObserverTarget(element);
-  };
 
   const theme = useTheme();
   const mdOrBigger = useMediaQuery(theme.breakpoints.up("md"));
@@ -124,32 +120,13 @@ export const App = () => {
     });
   };
 
-  const observerCallback = useCallback(
-    (entries) => {
-      if (entries[0].isIntersecting) {
-        if (products.length < total && !isActive) {
-          setCurrentPage((currentPage) => currentPage + 1);
-        }
-      }
-    },
-    [isActive, products, total]
-  );
-
-  useEffect(() => {
-    const observerTargetLocal = observerTarget;
-
-    const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
-
-    if (observerTargetLocal) {
-      observer.observe(observerTargetLocal);
+  const infiniteScrollCallback = useCallback(() => {
+    if (products.length < total && !isActive) {
+      setCurrentPage((currentPage) => currentPage + 1);
     }
+  }, [isActive, products, total]);
 
-    return () => {
-      if (observerTargetLocal) {
-        observer.unobserve(observerTargetLocal);
-      }
-    };
-  }, [observerCallback, observerTarget]);
+  const infiniteScrollTargetRef = useInfiniteScroll(infiniteScrollCallback);
 
   const searchText = searchOptions.searchText ?? "";
   const sortBy = searchOptions.sortBy ?? DEFAULT_SORT_BY;
@@ -175,7 +152,7 @@ export const App = () => {
   return (
     <StyledContainer maxWidth={maxWidth}>
       <Layout {...layoutProps} />
-      <div ref={observerTargetRefFn} />
+      <div ref={infiniteScrollTargetRef} />
     </StyledContainer>
   );
 };
