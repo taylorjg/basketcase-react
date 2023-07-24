@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
 import { useMediaQuery, useTheme } from "@mui/material";
 
@@ -30,8 +30,12 @@ export const App = () => {
   const [total, setTotal] = useState(0);
   const [facets, setFacets] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const observerTarget = useRef(null);
   const isActive = useIsActive();
+
+  const [observerTarget, setObserverTarget] = useState();
+  const observerTargetRefFn = (element) => {
+    setObserverTarget(element);
+  };
 
   const theme = useTheme();
   const mdOrBigger = useMediaQuery(theme.breakpoints.up("md"));
@@ -120,30 +124,32 @@ export const App = () => {
     });
   };
 
-  useEffect(() => {
-    const observerTargetCurrent = observerTarget.current;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.length === 1 && entries[0].isIntersecting) {
-          if (products.length < total && !isActive) {
-            setCurrentPage((currentPage) => currentPage + 1);
-          }
+  const observerCallback = useCallback(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        if (products.length < total && !isActive) {
+          setCurrentPage((currentPage) => currentPage + 1);
         }
-      },
-      { threshold: 1 }
-    );
+      }
+    },
+    [isActive, products, total]
+  );
 
-    if (observerTargetCurrent) {
-      observer.observe(observerTargetCurrent);
+  useEffect(() => {
+    const observerTargetLocal = observerTarget;
+
+    const observer = new IntersectionObserver(observerCallback, { threshold: 1 });
+
+    if (observerTargetLocal) {
+      observer.observe(observerTargetLocal);
     }
 
     return () => {
-      if (observerTargetCurrent) {
-        observer.unobserve(observerTargetCurrent);
+      if (observerTargetLocal) {
+        observer.unobserve(observerTargetLocal);
       }
     };
-  }, [isActive, products.length, total]);
+  }, [observerCallback, observerTarget]);
 
   const searchText = searchOptions.searchText ?? "";
   const sortBy = searchOptions.sortBy ?? DEFAULT_SORT_BY;
@@ -169,7 +175,7 @@ export const App = () => {
   return (
     <StyledContainer maxWidth={maxWidth}>
       <Layout {...layoutProps} />
-      <div ref={observerTarget} />
+      <div ref={observerTargetRefFn} />
     </StyledContainer>
   );
 };
