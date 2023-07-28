@@ -138,7 +138,9 @@ export const App = () => {
   const infiniteScrollTargetRef = useInfiniteScroll(infiniteScrollCallback);
 
   useEffect(() => {
-    sendAnalyticsClickEventRef.current("infinite_scroll", { current_page: currentPage });
+    if (currentPage > 1) {
+      sendAnalyticsClickEventRef.current("infinite_scroll", { current_page: currentPage });
+    }
   }, [currentPage]);
 
   const searchText = searchOptions.searchText ?? "";
