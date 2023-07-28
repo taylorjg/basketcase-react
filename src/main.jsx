@@ -37,7 +37,7 @@ ReactDOM.createRoot(root).render(
   // </React.StrictMode>
 );
 
-if (window.location.hostname !== "localhost") {
+if (window.location.hostname === "taylorjg.github.io") {
   const script1 = document.createElement("script");
   script1.async = true;
   script1.src = "https://www.googletagmanager.com/gtag/js?id=G-VRT62SH6ZY";

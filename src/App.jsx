@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
 import { useMediaQuery, useTheme } from "@mui/material";
 
+import { useAnalytics } from "@app/hooks/use-analytics";
 import { useInfiniteScroll } from "@app/hooks/use-infinite-scroll";
 import { useIsActive } from "@app/hooks/use-is-active";
 import { useLazySearch } from "@app/hooks/use-search";
@@ -25,6 +26,7 @@ import { LayoutSmall } from "./LayoutSmall";
 import { StyledContainer } from "./App.styles";
 
 export const App = () => {
+  const { sendAnalyticsClickEvent } = useAnalytics();
   const { showError } = useToast();
   const [searchOptions, setSearchOptions] = useUrlState({});
   const [products, setProducts] = useState([]);
@@ -118,6 +120,7 @@ export const App = () => {
       const kvps = keys.map((key) => [key, undefined]);
       return Object.fromEntries(kvps);
     });
+    sendAnalyticsClickEvent("logo_click");
   };
 
   const infiniteScrollCallback = useCallback(() => {
