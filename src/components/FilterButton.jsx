@@ -3,17 +3,22 @@ import PropTypes from "prop-types";
 import { Button, Drawer } from "@mui/material";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
+import { useAnalytics } from "@app/hooks/use-analytics";
+
 import { FilterPanel } from "./FilterPanel";
 
 export const FilterButton = ({ facets, onResetAllFacets, onResetFacet, onToggleFacetValue }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const { sendAnalyticsClickEvent } = useAnalytics();
 
   const openDrawer = () => {
     setIsDrawerOpen(true);
+    sendAnalyticsClickEvent("open_filter_panel");
   };
 
   const closeDrawer = () => {
     setIsDrawerOpen(false);
+    sendAnalyticsClickEvent("close_filter_panel");
   };
 
   return (

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
 import { useMediaQuery, useTheme } from "@mui/material";
 
@@ -27,6 +27,7 @@ import { StyledContainer } from "./App.styles";
 
 export const App = () => {
   const { sendAnalyticsClickEvent } = useAnalytics();
+  const sendAnalyticsClickEventRef = useRef(sendAnalyticsClickEvent);
   const { showError } = useToast();
   const [searchOptions, setSearchOptions] = useUrlState({});
   const [products, setProducts] = useState([]);
@@ -52,18 +53,22 @@ export const App = () => {
 
   const onResetAllFacets = () => {
     changeFacets((facets) => resetAllFacets(facets));
+    sendAnalyticsClickEvent("reset_all_facets");
   };
 
   const onResetFacet = (name) => {
     changeFacets((facets) => resetFacet(facets, name));
+    sendAnalyticsClickEvent("reset_facet", { facet: name });
   };
 
   const onResetFacetValue = (name, key) => {
     changeFacets((facets) => resetFacetValue(facets, name, key));
+    sendAnalyticsClickEvent("reset_facet_value", { facet: name, facet_value: key });
   };
 
   const onToggleFacetValue = (name, key) => {
     changeFacets((facets) => toggleFacetValue(facets, name, key));
+    sendAnalyticsClickEvent("toggle_facet_value", { facet: name, facet_value: key });
   };
 
   const onSearchSuccess = (data) => {
@@ -103,6 +108,7 @@ export const App = () => {
       ...currentSearchOptions,
       sortBy: updatedSortBy(sortBy),
     }));
+    sendAnalyticsClickEvent("change_sort_by", { sort_by: sortBy });
   };
 
   const onChangeSearchText = (searchText) => {
@@ -130,6 +136,10 @@ export const App = () => {
   }, [isActive, products, total]);
 
   const infiniteScrollTargetRef = useInfiniteScroll(infiniteScrollCallback);
+
+  useEffect(() => {
+    sendAnalyticsClickEventRef.current("infinite_scroll", { current_page: currentPage });
+  }, [currentPage]);
 
   const searchText = searchOptions.searchText ?? "";
   const sortBy = searchOptions.sortBy ?? DEFAULT_SORT_BY;
