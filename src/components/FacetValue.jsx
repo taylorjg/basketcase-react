@@ -5,7 +5,7 @@ import { StyledFacetValue } from "./FacetValue.styles";
 
 export const FacetValue = ({ facet, facetValue, onToggleFacetValue }) => {
   const onClick = () => {
-    onToggleFacetValue(facet.name, facetValue.key);
+    onToggleFacetValue(facet.name, facetValue.altKey);
   };
 
   const label = `${facetValue.displayName} (${facetValue.count})`;

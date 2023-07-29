@@ -60,17 +60,17 @@ export const App = () => {
     sendAnalyticsClickEvent("reset_facet", { facet: name });
   };
 
-  const onResetFacetValue = (name, key) => {
-    changeFacets((facets) => resetFacetValue(facets, name, key));
+  const onResetFacetValue = (name, altKey) => {
+    changeFacets((facets) => resetFacetValue(facets, name, altKey));
     sendAnalyticsClickEvent("reset_facet_value", {
-      facet_and_value: `${name}:${key}`,
+      facet_and_value: `${name}:${altKey}`,
     });
   };
 
-  const onToggleFacetValue = (name, key) => {
-    changeFacets((facets) => toggleFacetValue(facets, name, key));
+  const onToggleFacetValue = (name, altKey) => {
+    changeFacets((facets) => toggleFacetValue(facets, name, altKey));
     sendAnalyticsClickEvent("toggle_facet_value", {
-      facet_and_value: `${name}:${key}`,
+      facet_and_value: `${name}:${altKey}`,
     });
   };
 

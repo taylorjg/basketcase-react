@@ -4,10 +4,6 @@ import { Chip } from "@mui/material";
 import { StyledAppliedFilters } from "./AppliedFilters.styles";
 
 export const AppliedFilters = ({ facets, onResetFacetValue }) => {
-  const onDelete = (name, key) => {
-    onResetFacetValue(name, key);
-  };
-
   return (
     <StyledAppliedFilters>
       {facets.flatMap((facet) =>
@@ -15,9 +11,9 @@ export const AppliedFilters = ({ facets, onResetFacetValue }) => {
           (facetValue) =>
             facetValue.selected && (
               <Chip
-                key={`applied-filter-${facet.name}-${facetValue.key}`}
+                key={`applied-filter-${facet.name}-${facetValue.altKey}`}
                 label={facetValue.displayName}
-                onDelete={() => onDelete(facet.name, facetValue.key)}
+                onDelete={() => onResetFacetValue(facet.name, facetValue.altKey)}
               />
             )
         )

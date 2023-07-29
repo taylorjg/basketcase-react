@@ -1,10 +1,10 @@
-export const resetFacetValue = (facets, name, key) =>
-  facets.map((facet) => (facet.name === name ? resetFacetValueInternal(facet, key) : facet));
+export const resetFacetValue = (facets, name, altKey) =>
+  facets.map((facet) => (facet.name === name ? resetFacetValueInternal(facet, altKey) : facet));
 
-const resetFacetValueInternal = (facet, key) => ({
+const resetFacetValueInternal = (facet, altKey) => ({
   ...facet,
   facetValues: facet.facetValues.map((facetValue) =>
-    facetValue.key === key
+    facetValue.altKey === altKey
       ? {
           ...facetValue,
           selected: false,
@@ -26,13 +26,13 @@ const resetFacetInternal = (facet) => ({
   })),
 });
 
-export const toggleFacetValue = (facets, name, key) =>
+export const toggleFacetValue = (facets, name, altKey) =>
   facets.map((facet) => {
     if (facet.name !== name) return facet;
     return {
       ...facet,
       facetValues: facet.facetValues.map((facetValue) => {
-        if (facetValue.key !== key) {
+        if (facetValue.altKey !== altKey) {
           if (facet.type === "single") {
             return {
               ...facetValue,

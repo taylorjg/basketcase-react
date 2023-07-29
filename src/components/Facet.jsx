@@ -20,7 +20,7 @@ export const Facet = ({ facet, onResetFacet, onToggleFacetValue }) => {
       </StyledFacetHeader>
       {facet.facetValues.map((facetValue) => (
         <FacetValue
-          key={`${facet.name}-${facetValue.key}`}
+          key={`${facet.name}-${facetValue.altKey}`}
           facet={facet}
           facetValue={facetValue}
           onToggleFacetValue={onToggleFacetValue}
