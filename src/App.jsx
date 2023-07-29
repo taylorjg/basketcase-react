@@ -62,12 +62,20 @@ export const App = () => {
 
   const onResetFacetValue = (name, key) => {
     changeFacets((facets) => resetFacetValue(facets, name, key));
-    sendAnalyticsClickEvent("reset_facet_value", { facet: name, facet_value: key });
+    sendAnalyticsClickEvent("reset_facet_value", {
+      facet: name,
+      facet_value: key,
+      facet_and_value: `${name}:${key}`,
+    });
   };
 
   const onToggleFacetValue = (name, key) => {
     changeFacets((facets) => toggleFacetValue(facets, name, key));
-    sendAnalyticsClickEvent("toggle_facet_value", { facet: name, facet_value: key });
+    sendAnalyticsClickEvent("toggle_facet_value", {
+      facet: name,
+      facet_value: key,
+      facet_and_value: `${name}:${key}`,
+    });
   };
 
   const onSearchSuccess = (data) => {
