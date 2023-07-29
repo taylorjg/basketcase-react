@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import useUrlState from "@ahooksjs/use-url-state";
 import { useMediaQuery, useTheme } from "@mui/material";
 
@@ -27,7 +27,6 @@ import { StyledContainer } from "./App.styles";
 
 export const App = () => {
   const { sendAnalyticsClickEvent } = useAnalytics();
-  const sendAnalyticsClickEventRef = useRef(sendAnalyticsClickEvent);
   const { showError } = useToast();
   const [searchOptions, setSearchOptions] = useUrlState({});
   const [products, setProducts] = useState([]);
@@ -139,9 +138,9 @@ export const App = () => {
 
   useEffect(() => {
     if (currentPage > 1) {
-      sendAnalyticsClickEventRef.current("infinite_scroll", { current_page: currentPage });
+      sendAnalyticsClickEvent("infinite_scroll", { current_page: currentPage });
     }
-  }, [currentPage]);
+  }, [currentPage, sendAnalyticsClickEvent]);
 
   const searchText = searchOptions.searchText ?? "";
   const sortBy = searchOptions.sortBy ?? DEFAULT_SORT_BY;
