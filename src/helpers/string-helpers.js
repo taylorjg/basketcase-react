@@ -1,1 +1,1 @@
-export const applyQuotesIfNecessary = (s) => (s.includes(" ") ? `"${s}"` : s);
+export const applyQuotesIfNecessary = (s) => (/\W/.test(s) ? `"${s}"` : s);

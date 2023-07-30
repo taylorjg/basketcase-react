@@ -10,9 +10,9 @@ export const AppliedFilters = ({ facets, onResetFacetValue }) => {
     <StyledAppliedFilters>
       {facets.flatMap((facet) =>
         facet.facetValues.map((facetValue) => {
-          const fvdn = applyQuotesIfNecessary(facetValue.displayName);
-          const fdn = applyQuotesIfNecessary(facet.displayName);
-          const title = `Remove ${fvdn} selection within ${fdn} facet`;
+          const value = applyQuotesIfNecessary(facetValue.displayName);
+          const facet = applyQuotesIfNecessary(facet.displayName);
+          const title = `Click the cross to remove the ${value} value from the ${facet} facet`;
           return (
             facetValue.selected && (
               <Chip
