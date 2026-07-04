@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { Alert, Snackbar, Slide } from "@mui/material";
 
-export const ToastContext = React.createContext();
+import { ToastContext } from "./toast-context";
 
 export const ToastProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
