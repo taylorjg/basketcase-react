@@ -3,7 +3,6 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { ToastProvider } from "@app/hooks/toast-provider";
-import { routerFuture } from "@app/router-future";
 import { App } from "./App";
 import { selectItem } from "./test-helpers";
 
@@ -16,7 +15,7 @@ const renderApp = (path) => {
   render(
     <QueryClientProvider client={queryClient}>
       <ToastProvider>
-        <RouterProvider router={router} future={routerFuture} />
+        <RouterProvider router={router} />
       </ToastProvider>
     </QueryClientProvider>
   );

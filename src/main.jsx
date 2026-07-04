@@ -10,7 +10,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import { ToastProvider } from "@app/hooks/toast-provider";
-import { routerFuture } from "@app/router-future";
 
 import { App } from "./App.jsx";
 import { GlobalStyles } from "./Global.styles";
@@ -30,7 +29,7 @@ ReactDOM.createRoot(root).render(
   <QueryClientProvider client={queryClient}>
     <Global styles={GlobalStyles} />
     <ToastProvider>
-      <BrowserRouter future={routerFuture}>
+      <BrowserRouter>
         <App />
       </BrowserRouter>
     </ToastProvider>
