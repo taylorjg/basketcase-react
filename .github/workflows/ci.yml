@@ -29,7 +29,7 @@ jobs:
         with:
           start: npm run dev
           # The "wait-on" value needs to match "baseUrl" in cypress.config.js.
-          wait-on: "http://localhost:5173/basketcase-react"
+          wait-on: "http://localhost:5173/basketcase-react/"
           browser: chrome
 
   deploy:
