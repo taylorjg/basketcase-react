@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+import { publicAssetUrl } from "@app/helpers/public-asset-url";
 import { AppliedFilters } from "@app/components/AppliedFilters";
 import { FilterPanelContent } from "@app/components/FilterPanelContent";
 import { NetworkActivityProgressBar } from "@app/components/NetworkActivityProgressBar";
@@ -37,7 +38,11 @@ export const LayoutBig = ({
     <>
       <StyledPageHeader>
         <StyledPageHeaderTop>
-          <StyledLogo src="assets/logo.png" alt="BasketCase logo" onClick={onReset} />
+          <StyledLogo
+            src={publicAssetUrl("assets/logo.png")}
+            alt="BasketCase logo"
+            onClick={onReset}
+          />
           <Version />
         </StyledPageHeaderTop>
         <NetworkActivityProgressBar />
