@@ -34,7 +34,7 @@ to gh-pages where it is always available.
 * React
 * Vite
 * Material UI
-* react-query
+* @tanstack/react-query
 * Vitest + React Testing Library + msw
 * Cypress + Cypress Testing Library
 * GitHub Actions

@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useMutation } from "react-query";
+import { useCallback, useRef } from "react";
+import { useMutation } from "@tanstack/react-query";
 
 axios.defaults.baseURL = "https://rqnfyvya7e.execute-api.us-east-1.amazonaws.com";
 
@@ -27,23 +28,34 @@ const doSearch = async (searchOptions) => {
   return { products, total, facets };
 };
 
-const makeQueryOptions = (options) => {
-  const onSuccess = options?.onSuccess;
-  const onError = options?.onError;
-  if (onSuccess || onError) {
-    return {
-      ...(onSuccess ? { onSuccess } : undefined),
-      ...(onError ? { onError } : undefined),
-    };
-  }
-  return undefined;
-};
+export const useLazySearch = ({ onSuccess, onError } = {}) => {
+  const onSuccessRef = useRef(onSuccess);
+  const onErrorRef = useRef(onError);
+  onSuccessRef.current = onSuccess;
+  onErrorRef.current = onError;
 
-export const useLazySearch = (options) => {
-  const queryOptions = makeQueryOptions(options);
-  const { mutate, mutateAsync } = useMutation(doSearch, queryOptions);
+  const { mutate, mutateAsync } = useMutation({ mutationFn: doSearch });
+
+  const search = useCallback(
+    (variables) =>
+      mutate(variables, {
+        onSuccess: (...args) => onSuccessRef.current?.(...args),
+        onError: (...args) => onErrorRef.current?.(...args),
+      }),
+    [mutate]
+  );
+
+  const searchAsync = useCallback(
+    (variables) =>
+      mutateAsync(variables, {
+        onSuccess: (...args) => onSuccessRef.current?.(...args),
+        onError: (...args) => onErrorRef.current?.(...args),
+      }),
+    [mutateAsync]
+  );
+
   return {
-    search: mutate,
-    searchAsync: mutateAsync,
+    search,
+    searchAsync,
   };
 };
