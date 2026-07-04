@@ -9,8 +9,10 @@ const sortByLabelsToValues = {
 
 export const selectItem = (selectLabelText, selectItemText) => {
   const value = sortByLabelsToValues[selectItemText] ?? selectItemText;
-  const selectComponent = screen.getByLabelText(selectLabelText);
-  const nativeInput = selectComponent.querySelector(".MuiSelect-nativeInput");
+  const labeled = screen.getByLabelText(selectLabelText);
+  const selectRoot =
+    labeled.closest(".MuiSelect-root") ?? labeled.closest(".MuiInputBase-root") ?? labeled;
+  const nativeInput = selectRoot.querySelector(".MuiSelect-nativeInput");
 
   fireEvent.change(nativeInput, { target: { value } });
 };
