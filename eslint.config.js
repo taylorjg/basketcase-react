@@ -13,7 +13,7 @@ export default defineConfig([
   js.configs.recommended,
   eslintPluginPrettierRecommended,
   {
-    files: ["**/*.{js,jsx}"],
+    files: ["src/**/*.{js,jsx}"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
@@ -23,7 +23,8 @@ export default defineConfig([
       },
     },
     settings: {
-      react: { version: "detect" },
+      // "detect" uses context.getFilename(), removed in ESLint 10 — pin version instead.
+      react: { version: "18.3" },
     },
     extends: [react.configs.flat.recommended, react.configs.flat["jsx-runtime"]],
     plugins: {
