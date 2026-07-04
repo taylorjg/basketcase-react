@@ -3,6 +3,7 @@ import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { ToastProvider } from "@app/hooks/toast-provider";
+import { routerFuture } from "@app/router-future";
 import { App } from "./App";
 import { selectItem } from "./test-helpers";
 
@@ -15,7 +16,7 @@ const renderApp = (path) => {
   render(
     <QueryClientProvider client={queryClient}>
       <ToastProvider>
-        <RouterProvider router={router} />
+        <RouterProvider router={router} future={routerFuture} />
       </ToastProvider>
     </QueryClientProvider>
   );
