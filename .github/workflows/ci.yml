@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
-      - uses: cypress-io/github-action@v6
+      - uses: cypress-io/github-action@v7
         with:
           start: npm run dev
           # The "wait-on" value needs to match "baseUrl" in cypress.config.js.
