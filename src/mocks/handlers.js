@@ -1,4 +1,4 @@
-import { rest } from "msw";
+import { http, HttpResponse } from "msw";
 
 import all from "./fixtures/all.json";
 import sortByPriceLowToHigh from "./fixtures/sortByPriceLowToHigh.json";
@@ -28,13 +28,13 @@ const applySortBy = (sortBy) => {
   }
 };
 
-const mockSearchHandler = async (req, res, ctx) => {
-  const params = await req.json();
+const mockSearchHandler = async ({ request }) => {
+  const params = await request.json();
   const pageSize = params.pageSize ?? 10;
   const currentPage = params.currentPage ?? 1;
   const sortBy = params.sortBy ?? "price-low-to-high";
   const results = applyPagination(applySortBy(sortBy), pageSize, currentPage);
-  return res(ctx.status(200), ctx.json(results));
+  return HttpResponse.json(results);
 };
 
-export const handlers = [rest.post(/\/api\/search$/, mockSearchHandler)];
+export const handlers = [http.post(/\/api\/search$/, mockSearchHandler)];
