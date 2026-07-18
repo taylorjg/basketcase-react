@@ -57,5 +57,10 @@
   },
   "overrides": {
     "react-router": "$react-router-dom"
+  },
+  "allowScripts": {
+    "cypress@15.18.1": true,
+    "msw@2.15.0": true,
+    "fsevents@2.3.3": true
   }
 }
