@@ -1,4 +1,4 @@
-[![CI/CD](https://github.com/taylorjg/basketcase-react/actions/workflows/ci.yml/badge.svg)](https://github.com/taylorjg/basketcase-react/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/taylorjg/basketcase-react/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/taylorjg/basketcase-react/actions/workflows/ci-cd.yml)
 
 # Description
 
