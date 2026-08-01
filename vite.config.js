@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/basketcase-react/",
   plugins: [react()],
   resolve: {
-    alias: [{ find: "@app", replacement: path.resolve(__dirname, "src") }],
+    alias: [{ find: "@app", replacement: path.resolve(import.meta.dirname, "src") }],
   },
   test: {
     globals: true,
