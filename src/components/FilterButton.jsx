@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { FilterAlt as FilterAltIcon } from "@mui/icons-material";
 import { Button, Drawer } from "@mui/material";
-import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 import { useAnalytics } from "@app/hooks/use-analytics";
 

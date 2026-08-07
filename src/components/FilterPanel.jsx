@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
+import { Close as CloseIcon } from "@mui/icons-material";
 import { Divider, IconButton, Typography } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
 
 import { FilterPanelContent } from "./FilterPanelContent";
 import { StyledFilterPanel, StyledFilterPanelHeader } from "./FilterPanel.styles";

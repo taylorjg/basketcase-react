@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
+import { DeleteOutlined as DeleteOutlinedIcon } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
 import { Facet } from "./Facet";
 import { StyledResetAll } from "./FilterPanelContent.styles";

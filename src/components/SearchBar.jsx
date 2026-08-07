@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
+import { Close as CloseIcon, Search as SearchIcon } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import SearchIcon from "@mui/icons-material/Search";
 
 import { StyledSearchBar, StyledInputBase } from "./SearchBar.styles";
 
