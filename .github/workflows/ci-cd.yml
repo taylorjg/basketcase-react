@@ -4,13 +4,18 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -18,23 +23,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run lint
+      - name: Lint
         run: npm run lint
 
-      - name: Run unit tests
+      - name: Run tests
         run: npm test
 
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
 
-      - uses: cypress-io/github-action@v7
+      - name: Run end-to-end tests
+        uses: cypress-io/github-action@v7
         with:
           start: npm run dev
           # The "wait-on" value needs to match "baseUrl" in cypress.config.js.
@@ -42,15 +50,17 @@ jobs:
           browser: chrome
 
   deploy:
-    if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v')
     needs: [test, e2e]
+    if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v')
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout
+        uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -61,7 +71,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
