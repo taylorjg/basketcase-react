@@ -42,7 +42,6 @@ jobs:
           browser: chrome
 
   deploy:
-    name: Deploy to gh-pages
     if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v')
     needs: [test, e2e]
     runs-on: ubuntu-latest
