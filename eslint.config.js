@@ -9,7 +9,7 @@ import vitest from "@vitest/eslint-plugin";
 import cypress from "eslint-plugin-cypress";
 
 export default defineConfig([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist/**", "node_modules/**"]),
   js.configs.recommended,
   eslintPluginPrettierRecommended,
   {
