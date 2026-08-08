@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
-    "test": "vitest run --reporter verbose",
+    "test": "vitest run",
     "test:cypress": "cypress run",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist",
