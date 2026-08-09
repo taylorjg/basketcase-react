@@ -26,7 +26,10 @@ export default defineConfig([
       // "detect" uses context.getFilename(), removed in ESLint 10 — pin version instead.
       react: { version: "19.2" },
     },
-    extends: [react.configs.flat.recommended, react.configs.flat["jsx-runtime"]],
+    extends: [
+      react.configs.flat.recommended,
+      react.configs.flat["jsx-runtime"],
+    ],
     plugins: {
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,

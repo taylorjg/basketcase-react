@@ -11,7 +11,9 @@ export const selectItem = (selectLabelText, selectItemText) => {
   const value = sortByLabelsToValues[selectItemText] ?? selectItemText;
   const labeled = screen.getByLabelText(selectLabelText);
   const selectRoot =
-    labeled.closest(".MuiSelect-root") ?? labeled.closest(".MuiInputBase-root") ?? labeled;
+    labeled.closest(".MuiSelect-root") ??
+    labeled.closest(".MuiInputBase-root") ??
+    labeled;
   const nativeInput = selectRoot.querySelector(".MuiSelect-nativeInput");
 
   fireEvent.change(nativeInput, { target: { value } });

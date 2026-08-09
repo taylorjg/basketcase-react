@@ -15,40 +15,40 @@ to gh-pages where it is always available.
 
 # Features
 
-* Change the sort order
-* Filter by a search term
-* Show faceted information - counts of products by brand, colour, price, etc.
-* Filter by facets - allow results to be filtered by selecting brand, colour, price, etc.
-* Responsive UI: filters are embedded in the page when the screen size is `md` or above otherwise they are shown in a slide out panel
-* Infinite scrolling - scroll to the bottom of the page to load more results
-* URL history - each time a change is made to the search term, sort order or facet selections, a new URL is pushed to the browser history allowing:
-  * Bookmarking of URLs
-  * Sharing of URLs
-  * Navigation backwards and forwards through URLs
+- Change the sort order
+- Filter by a search term
+- Show faceted information - counts of products by brand, colour, price, etc.
+- Filter by facets - allow results to be filtered by selecting brand, colour, price, etc.
+- Responsive UI: filters are embedded in the page when the screen size is `md` or above otherwise they are shown in a slide out panel
+- Infinite scrolling - scroll to the bottom of the page to load more results
+- URL history - each time a change is made to the search term, sort order or facet selections, a new URL is pushed to the browser history allowing:
+  - Bookmarking of URLs
+  - Sharing of URLs
+  - Navigation backwards and forwards through URLs
 
 # Technologies
 
 ## Frontend
 
-* JavaScript
-* React
-* Vite
-* Material UI
-* @tanstack/react-query
-* Vitest + React Testing Library + msw
-* Cypress + Cypress Testing Library
-* GitHub Actions
+- JavaScript
+- React
+- Vite
+- Material UI
+- @tanstack/react-query
+- Vitest + React Testing Library + msw
+- Cypress + Cypress Testing Library
+- GitHub Actions
 
 ## Backend
 
 The code for the backend is available in [this repo](https://github.com/taylorjg/basketcase-serverless).
 
-* Node.js
-* Serverless Framework
-* Elasticsearch (hosted on [Bonsai](https://bonsai.io/))
+- Node.js
+- Serverless Framework
+- Elasticsearch (hosted on [Bonsai](https://bonsai.io/))
 
 # Links
 
-* [BasketCase Serverless Backend repo](https://github.com/taylorjg/basketcase-serverless)
-* [Serverless Framework](https://www.serverless.com/)
-* [Old AngularJS 1.x version of BasketCase](https://github.com/taylorjg/BasketCase)
+- [BasketCase Serverless Backend repo](https://github.com/taylorjg/basketcase-serverless)
+- [Serverless Framework](https://www.serverless.com/)
+- [Old AngularJS 1.x version of BasketCase](https://github.com/taylorjg/BasketCase)

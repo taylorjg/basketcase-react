@@ -1,5 +1,7 @@
 export const resetFacetValue = (facets, name, altKey) =>
-  facets.map((facet) => (facet.name === name ? resetFacetValueInternal(facet, altKey) : facet));
+  facets.map((facet) =>
+    facet.name === name ? resetFacetValueInternal(facet, altKey) : facet
+  );
 
 const resetFacetValueInternal = (facet, altKey) => ({
   ...facet,
@@ -14,7 +16,9 @@ const resetFacetValueInternal = (facet, altKey) => ({
 });
 
 export const resetFacet = (facets, name) =>
-  facets.map((facet) => (facet.name === name ? resetFacetInternal(facet) : facet));
+  facets.map((facet) =>
+    facet.name === name ? resetFacetInternal(facet) : facet
+  );
 
 export const resetAllFacets = (facets) => facets.map(resetFacetInternal);
 

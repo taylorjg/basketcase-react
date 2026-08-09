@@ -7,7 +7,12 @@ import { useAnalytics } from "@app/hooks/use-analytics";
 
 import { FilterPanel } from "./FilterPanel";
 
-export const FilterButton = ({ facets, onResetAllFacets, onResetFacet, onToggleFacetValue }) => {
+export const FilterButton = ({
+  facets,
+  onResetAllFacets,
+  onResetFacet,
+  onToggleFacetValue,
+}) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { sendAnalyticsClickEvent } = useAnalytics();
 
@@ -23,7 +28,12 @@ export const FilterButton = ({ facets, onResetAllFacets, onResetFacet, onToggleF
 
   return (
     <>
-      <Button onClick={openDrawer} variant="outlined" size="small" startIcon={<FilterAltIcon />}>
+      <Button
+        onClick={openDrawer}
+        variant="outlined"
+        size="small"
+        startIcon={<FilterAltIcon />}
+      >
         Filter
       </Button>
       <Drawer anchor="left" open={isDrawerOpen} onClose={closeDrawer}>

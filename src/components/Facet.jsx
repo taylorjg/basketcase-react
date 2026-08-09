@@ -6,7 +6,9 @@ import { FacetValue } from "./FacetValue";
 import { StyledFacet, StyledFacetHeader } from "./Facet.styles";
 
 export const Facet = ({ facet, onResetFacet, onToggleFacetValue }) => {
-  const hasSelectedFacetValues = facet.facetValues.some(({ selected }) => selected);
+  const hasSelectedFacetValues = facet.facetValues.some(
+    ({ selected }) => selected
+  );
 
   return (
     <StyledFacet>

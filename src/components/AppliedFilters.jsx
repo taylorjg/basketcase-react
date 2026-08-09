@@ -18,7 +18,9 @@ export const AppliedFilters = ({ facets, onResetFacetValue }) => {
               <Chip
                 key={`applied-filter-${facet.name}-${facetValue.altKey}`}
                 label={facetValue.displayName}
-                onDelete={() => onResetFacetValue(facet.name, facetValue.altKey)}
+                onDelete={() =>
+                  onResetFacetValue(facet.name, facetValue.altKey)
+                }
                 title={title}
               />
             )

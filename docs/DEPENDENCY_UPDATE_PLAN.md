@@ -8,14 +8,14 @@ Plan for bringing **all** dependencies to their latest versions. Work in small P
 
 These migrations are already on `main`:
 
-| Area | Was | Now |
-|------|-----|-----|
-| Data fetching | `react-query` v3 | `@tanstack/react-query` v5 |
-| API mocking | MSW 1 (`rest`) | MSW 2 (`http`) |
-| Routing | React Router 6 | React Router 7 |
-| Lint / format | ESLint 8 + `.eslintrc.cjs`, Prettier 2 | ESLint 9 flat config, Prettier 3 |
-| Build / test (first pass) | Vite 4, Vitest 0.33, jsdom 22 | Vite 6, Vitest 3, jsdom 26 |
-| Node | — | 22 via `.nvmrc`; CI reads it |
+| Area                      | Was                                    | Now                              |
+| ------------------------- | -------------------------------------- | -------------------------------- |
+| Data fetching             | `react-query` v3                       | `@tanstack/react-query` v5       |
+| API mocking               | MSW 1 (`rest`)                         | MSW 2 (`http`)                   |
+| Routing                   | React Router 6                         | React Router 7                   |
+| Lint / format             | ESLint 8 + `.eslintrc.cjs`, Prettier 2 | ESLint 9 flat config, Prettier 3 |
+| Build / test (first pass) | Vite 4, Vitest 0.33, jsdom 22          | Vite 6, Vitest 3, jsdom 26       |
+| Node                      | —                                      | 22 via `.nvmrc`; CI reads it     |
 
 **Pinned workaround:** `package.json` `overrides` forces a single `react-router@7` for `@ahooksjs/use-url-state` (peer dep still lists `react-router ^6`).
 
@@ -27,59 +27,59 @@ Locked versions from `npm outdated` / `npm view`. Packages not listed are alread
 
 ### Runtime
 
-| Package | Installed | Latest | Gap |
-|---------|-----------|--------|-----|
-| `react` / `react-dom` | 18.3.1 | 19.2.7 | Major |
-| `@mui/material` | 5.18.0 | 9.2.0 | Major (×4) |
-| `@mui/icons-material` | 5.18.0 | 9.2.0 | Major (×4) |
-| `@types/react` | 18.3.31 | 19.2.17 | Major |
-| `@types/react-dom` | 18.3.7 | 19.2.3 | Major |
-| `@tanstack/react-query` | 5.101.2 | 5.101.2 | ✓ |
-| `react-router-dom` | 7.18.1 | 7.18.1 | ✓ |
-| `@ahooksjs/use-url-state` | 3.5.1 | 3.5.1 | ✓ (peer dep stale) |
-| `axios` | ^1.4.0 → 1.x | 1.18.1 | In-range |
-| `@emotion/react` | ^11.11.1 → 11.14 | 11.14.0 | In-range |
-| `@emotion/styled` | ^11.11.0 → 11.14 | 11.14.1 | In-range |
-| `@fontsource/roboto` | ^5.0.3 → 5.2 | 5.2.10 | In-range |
-| `prop-types` | 15.8.1 | 15.8.1 | ✓ |
+| Package                   | Installed        | Latest  | Gap                |
+| ------------------------- | ---------------- | ------- | ------------------ |
+| `react` / `react-dom`     | 18.3.1           | 19.2.7  | Major              |
+| `@mui/material`           | 5.18.0           | 9.2.0   | Major (×4)         |
+| `@mui/icons-material`     | 5.18.0           | 9.2.0   | Major (×4)         |
+| `@types/react`            | 18.3.31          | 19.2.17 | Major              |
+| `@types/react-dom`        | 18.3.7           | 19.2.3  | Major              |
+| `@tanstack/react-query`   | 5.101.2          | 5.101.2 | ✓                  |
+| `react-router-dom`        | 7.18.1           | 7.18.1  | ✓                  |
+| `@ahooksjs/use-url-state` | 3.5.1            | 3.5.1   | ✓ (peer dep stale) |
+| `axios`                   | ^1.4.0 → 1.x     | 1.18.1  | In-range           |
+| `@emotion/react`          | ^11.11.1 → 11.14 | 11.14.0 | In-range           |
+| `@emotion/styled`         | ^11.11.0 → 11.14 | 11.14.1 | In-range           |
+| `@fontsource/roboto`      | ^5.0.3 → 5.2     | 5.2.10  | In-range           |
+| `prop-types`              | 15.8.1           | 15.8.1  | ✓                  |
 
 ### Toolchain & test
 
-| Package | Installed | Latest | Gap |
-|---------|-----------|--------|-----|
-| `vite` | 6.4.3 | 8.1.3 | Major (×2) |
-| `vitest` | 3.2.6 | 4.1.9 | Major |
-| `@vitejs/plugin-react` | 4.7.0 | 6.0.3 | Major (×2) |
-| `jsdom` | 26.1.0 | 29.1.1 | Major |
-| `msw` | 2.14.6 | latest 2.x | In-range |
-| `cypress` | 12.17.4 | 15.18.0 | Major (×3) |
-| `@testing-library/react` | 14.3.1 | 16.3.2 | Major (×2) |
-| `@testing-library/jest-dom` | 5.17.0 | 6.9.1 | Major |
-| `@testing-library/cypress` | 9.0.0 | 10.1.3 | Major |
-| `@testing-library/user-event` | ^14.4.3 → 14.6 | 14.6.1 | In-range |
-| `@vitest/eslint-plugin` | 1.6.21 | 1.6.21 | ✓ |
+| Package                       | Installed      | Latest     | Gap        |
+| ----------------------------- | -------------- | ---------- | ---------- |
+| `vite`                        | 6.4.3          | 8.1.3      | Major (×2) |
+| `vitest`                      | 3.2.6          | 4.1.9      | Major      |
+| `@vitejs/plugin-react`        | 4.7.0          | 6.0.3      | Major (×2) |
+| `jsdom`                       | 26.1.0         | 29.1.1     | Major      |
+| `msw`                         | 2.14.6         | latest 2.x | In-range   |
+| `cypress`                     | 12.17.4        | 15.18.0    | Major (×3) |
+| `@testing-library/react`      | 14.3.1         | 16.3.2     | Major (×2) |
+| `@testing-library/jest-dom`   | 5.17.0         | 6.9.1      | Major      |
+| `@testing-library/cypress`    | 9.0.0          | 10.1.3     | Major      |
+| `@testing-library/user-event` | ^14.4.3 → 14.6 | 14.6.1     | In-range   |
+| `@vitest/eslint-plugin`       | 1.6.21         | 1.6.21     | ✓          |
 
 ### Lint & deploy
 
-| Package | Installed | Latest | Gap |
-|---------|-----------|--------|-----|
-| `eslint` | 9.39.4 | 10.6.0 | Major |
-| `@eslint/js` | 9.39.4 | 10.0.1 | Major |
-| `eslint-config-prettier` | 10.1.8 | 10.1.8 | ✓ |
-| `eslint-plugin-cypress` | 6.4.2 | 6.4.2 | ✓ |
-| `eslint-plugin-prettier` | 5.5.6 | 5.5.6 | ✓ |
-| `eslint-plugin-react` | 7.37.5 | 7.37.5 | ✓ |
-| `eslint-plugin-react-hooks` | 7.1.1 | 7.1.1 | ✓ |
-| `eslint-plugin-react-refresh` | 0.5.3 | 0.5.3 | ✓ |
-| `prettier` | 3.9.4 | latest 3.x | ✓ |
-| `globals` | 17.7.0 | latest | In-range |
-| `gh-pages` | 5.0.0 | 6.3.0 | Major |
+| Package                       | Installed | Latest     | Gap      |
+| ----------------------------- | --------- | ---------- | -------- |
+| `eslint`                      | 9.39.4    | 10.6.0     | Major    |
+| `@eslint/js`                  | 9.39.4    | 10.0.1     | Major    |
+| `eslint-config-prettier`      | 10.1.8    | 10.1.8     | ✓        |
+| `eslint-plugin-cypress`       | 6.4.2     | 6.4.2      | ✓        |
+| `eslint-plugin-prettier`      | 5.5.6     | 5.5.6      | ✓        |
+| `eslint-plugin-react`         | 7.37.5    | 7.37.5     | ✓        |
+| `eslint-plugin-react-hooks`   | 7.1.1     | 7.1.1      | ✓        |
+| `eslint-plugin-react-refresh` | 0.5.3     | 0.5.3      | ✓        |
+| `prettier`                    | 3.9.4     | latest 3.x | ✓        |
+| `globals`                     | 17.7.0    | latest     | In-range |
+| `gh-pages`                    | 5.0.0     | 6.3.0      | Major    |
 
 ### Node
 
-| | Current | Target |
-|---|---------|--------|
-| `.nvmrc` | 22 | **24 (last PR)** |
+|          | Current | Target           |
+| -------- | ------- | ---------------- |
+| `.nvmrc` | 22      | **24 (last PR)** |
 
 ---
 
@@ -300,11 +300,11 @@ npm run build
 
 **If unit tests fail on Node 24:**
 
-| Option | Notes |
-|--------|--------|
-| **A. Vitest 4 + jsdom 29** (PR B) | Try first — may already be fixed upstream |
-| **B. Custom Vitest environment** | Preserve Node’s native `AbortController` |
-| **C. Stay on Node 22** | Valid until April 2027 (LTS); document and revisit |
+| Option                            | Notes                                              |
+| --------------------------------- | -------------------------------------------------- |
+| **A. Vitest 4 + jsdom 29** (PR B) | Try first — may already be fixed upstream          |
+| **B. Custom Vitest environment**  | Preserve Node’s native `AbortController`           |
+| **C. Stay on Node 22**            | Valid until April 2027 (LTS); document and revisit |
 
 **Effort:** 1–2 hrs if green; longer if a test workaround is needed
 
@@ -312,12 +312,12 @@ npm run build
 
 ## Optional / follow-up
 
-| Item | Notes |
-|------|--------|
-| Replace `@ahooksjs/use-url-state` | Peer dep still `react-router ^6`; override works today. Consider `useSearchParams` + small helper if package is abandoned. |
-| React Compiler ESLint rules | `eslint-plugin-react-hooks` v7 `recommended` preset adds `set-state-in-effect`, `refs`, etc. Opt in deliberately after React 19 / MUI stable. |
-| Cypress 15 + Mocha/Chai ESLint | `eslint-plugin-cypress` 6 docs show optional `eslint-plugin-mocha` / `chai-friendly` — only if lint noise appears. |
-| `npm audit` | Review manually; avoid `--force`. |
+| Item                              | Notes                                                                                                                                         |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Replace `@ahooksjs/use-url-state` | Peer dep still `react-router ^6`; override works today. Consider `useSearchParams` + small helper if package is abandoned.                    |
+| React Compiler ESLint rules       | `eslint-plugin-react-hooks` v7 `recommended` preset adds `set-state-in-effect`, `refs`, etc. Opt in deliberately after React 19 / MUI stable. |
+| Cypress 15 + Mocha/Chai ESLint    | `eslint-plugin-cypress` 6 docs show optional `eslint-plugin-mocha` / `chai-friendly` — only if lint noise appears.                            |
+| `npm audit`                       | Review manually; avoid `--force`.                                                                                                             |
 
 ---
 
@@ -332,30 +332,30 @@ npm run build
 
 ## Known issues (reference)
 
-| Issue | Cause | Fix / status |
-|-------|-------|----------------|
-| MUI Select `role="combobox"` in tests | MUI 5.18+ | `test-helpers.js` uses combobox / native input |
-| Infinite re-render on sort | `useInfiniteScroll` ref + `setState` | Refactored to `useRef` |
-| Vite 6 `base` without trailing slash | Asset 404s | `base: "/basketcase-react/"` + `publicAssetUrl()` |
-| Cypress CI 404 on `/basketcase-react` | Vite strict `base` | Trailing slash in `wait-on` + `baseUrl` |
-| Duplicate `react-router` with RR7 | `@ahooksjs/use-url-state` pulls v6 | `overrides` in `package.json` |
-| Node 24 + jsdom + RR navigate | `AbortSignal` in test env | **Deferred to PR I** |
-| Toast context + Fast Refresh | `react-refresh/only-export-components` | `toast-context.js` split |
+| Issue                                 | Cause                                  | Fix / status                                      |
+| ------------------------------------- | -------------------------------------- | ------------------------------------------------- |
+| MUI Select `role="combobox"` in tests | MUI 5.18+                              | `test-helpers.js` uses combobox / native input    |
+| Infinite re-render on sort            | `useInfiniteScroll` ref + `setState`   | Refactored to `useRef`                            |
+| Vite 6 `base` without trailing slash  | Asset 404s                             | `base: "/basketcase-react/"` + `publicAssetUrl()` |
+| Cypress CI 404 on `/basketcase-react` | Vite strict `base`                     | Trailing slash in `wait-on` + `baseUrl`           |
+| Duplicate `react-router` with RR7     | `@ahooksjs/use-url-state` pulls v6     | `overrides` in `package.json`                     |
+| Node 24 + jsdom + RR navigate         | `AbortSignal` in test env              | **Deferred to PR I**                              |
+| Toast context + Fast Refresh          | `react-refresh/only-export-components` | `toast-context.js` split                          |
 
 ---
 
 ## Effort summary
 
-| PR | Effort | Value |
-|----|--------|-------|
-| A — In-range update | ~15 min | Lockfile hygiene |
-| B — Vite 8 + Vitest 4 | 2–4 hrs | Latest build/test toolchain |
-| C — Cypress 15 | 1–3 hrs | Supported E2E runner |
-| D — ESLint 10 | 1–2 hrs | Current linter major |
-| E — Testing Library | 1–2 hrs | Modern test utils |
-| F — React 19 | 2–4 hrs | Current React major |
-| G — MUI 9 | 1–2 days | Current UI major |
-| H — gh-pages + CI | ~30 min | Deploy + Actions freshness |
-| I — Node 24 | 1–2+ hrs | Latest Node runtime |
+| PR                    | Effort   | Value                       |
+| --------------------- | -------- | --------------------------- |
+| A — In-range update   | ~15 min  | Lockfile hygiene            |
+| B — Vite 8 + Vitest 4 | 2–4 hrs  | Latest build/test toolchain |
+| C — Cypress 15        | 1–3 hrs  | Supported E2E runner        |
+| D — ESLint 10         | 1–2 hrs  | Current linter major        |
+| E — Testing Library   | 1–2 hrs  | Modern test utils           |
+| F — React 19          | 2–4 hrs  | Current React major         |
+| G — MUI 9             | 1–2 days | Current UI major            |
+| H — gh-pages + CI     | ~30 min  | Deploy + Actions freshness  |
+| I — Node 24           | 1–2+ hrs | Latest Node runtime         |
 
 **Total remaining (estimate):** ~2–4 days of focused work, dominated by MUI 9.

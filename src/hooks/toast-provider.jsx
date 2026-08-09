@@ -31,7 +31,9 @@ export const ToastProvider = ({ children }) => {
   };
 
   return (
-    <ToastContext.Provider value={{ showSuccess, showInfo, showWarning, showError }}>
+    <ToastContext.Provider
+      value={{ showSuccess, showInfo, showWarning, showError }}
+    >
       {children}
       <Snackbar
         open={open}
@@ -40,7 +42,12 @@ export const ToastProvider = ({ children }) => {
         anchorOrigin={anchorOrigin}
         TransitionComponent={Slide}
       >
-        <Alert onClose={handleClose} severity={severity} variant="filled" sx={{ width: "100%" }}>
+        <Alert
+          onClose={handleClose}
+          severity={severity}
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
           {message}
         </Alert>
       </Snackbar>

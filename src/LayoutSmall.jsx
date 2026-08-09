@@ -10,7 +10,11 @@ import { SearchBar } from "@app/components/SearchBar";
 import { SortBy } from "@app/components/SortBy";
 import { Version } from "@app/components/Version";
 
-import { StyledLogo, StyledPageHeader, StyledPageHeaderTop } from "./LayoutCommon.styles";
+import {
+  StyledLogo,
+  StyledPageHeader,
+  StyledPageHeaderTop,
+} from "./LayoutCommon.styles";
 import { StyledFilterButtonAndSortByRow } from "./LayoutSmall.styles";
 
 export const LayoutSmall = ({

@@ -53,7 +53,8 @@ describe("App test suite", () => {
   it("UI state is reflected in the URL state", async () => {
     const router = renderApp();
 
-    const productDescription1 = "Beko WM5122S 5Kg Washing Machine with 1200 rpm - Silver";
+    const productDescription1 =
+      "Beko WM5122S 5Kg Washing Machine with 1200 rpm - Silver";
     expect(await screen.findByText(productDescription1)).toBeInTheDocument();
 
     expect(router.state.location.pathname).toBe("/");

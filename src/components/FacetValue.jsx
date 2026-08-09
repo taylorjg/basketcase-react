@@ -17,9 +17,17 @@ export const FacetValue = ({ facet, facetValue, onToggleFacetValue }) => {
       <FormControlLabel
         control={
           isSingle ? (
-            <Radio size="small" checked={facetValue.selected} onClick={onClick} />
+            <Radio
+              size="small"
+              checked={facetValue.selected}
+              onClick={onClick}
+            />
           ) : (
-            <Checkbox size="small" checked={facetValue.selected} onClick={onClick} />
+            <Checkbox
+              size="small"
+              checked={facetValue.selected}
+              onClick={onClick}
+            />
           )
         }
         label={label}

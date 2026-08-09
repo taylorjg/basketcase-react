@@ -3,7 +3,10 @@ import { Close as CloseIcon } from "@mui/icons-material";
 import { Divider, IconButton, Typography } from "@mui/material";
 
 import { FilterPanelContent } from "./FilterPanelContent";
-import { StyledFilterPanel, StyledFilterPanelHeader } from "./FilterPanel.styles";
+import {
+  StyledFilterPanel,
+  StyledFilterPanelHeader,
+} from "./FilterPanel.styles";
 
 export const FilterPanel = ({
   facets,
