@@ -54,7 +54,7 @@
     "msw": "^2.14.6",
     "prettier": "^3.9.6",
     "vite": "^8.1.5",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.11"
   },
   "overrides": {
     "react-router": "$react-router-dom"
