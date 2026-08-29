@@ -28,7 +28,10 @@ import { StyledContainer } from "./App.styles";
 export const App = () => {
   const { sendAnalyticsClickEvent } = useAnalytics();
   const { showError } = useToast();
-  const [searchOptions, setSearchOptions] = useUrlState({});
+  const [searchOptions, setSearchOptions] = useUrlState(
+    {},
+    { navigateMode: "replace" }
+  );
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [facets, setFacets] = useState([]);

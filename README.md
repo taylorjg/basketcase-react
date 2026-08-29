@@ -21,10 +21,7 @@ to gh-pages where it is always available.
 - Filter by facets - allow results to be filtered by selecting brand, colour, price, etc.
 - Responsive UI: filters are embedded in the page when the screen size is `md` or above otherwise they are shown in a slide out panel
 - Infinite scrolling - scroll to the bottom of the page to load more results
-- URL history - each time a change is made to the search term, sort order or facet selections, a new URL is pushed to the browser history allowing:
-  - Bookmarking of URLs
-  - Sharing of URLs
-  - Navigation backwards and forwards through URLs
+- URL state - the query string reflects the current search term, sort order and facet selections, allowing bookmarking and sharing of URLs. History entries are replaced rather than pushed so the back button leaves the app instead of stepping through every filter change.
 
 # Technologies
 
