@@ -15,4 +15,12 @@ afterAll(() => server.close());
 
 beforeAll(() => {
   window.scrollTo = () => {};
+
+  class IntersectionObserverMock {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+  }
+
+  window.IntersectionObserver = IntersectionObserverMock;
 });
