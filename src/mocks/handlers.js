@@ -1,4 +1,4 @@
-import { http, HttpResponse } from "msw";
+import { http, HttpResponse } from "msw/http";
 
 import all from "./fixtures/all.json";
 import sortByPriceLowToHigh from "./fixtures/sortByPriceLowToHigh.json";
