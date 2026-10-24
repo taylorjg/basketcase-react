@@ -41,7 +41,7 @@
     "@types/react-dom": "^19.2.5",
     "@vitejs/plugin-react": "^6.1.2",
     "@vitest/eslint-plugin": "^1.6.27",
-    "cypress": "^15.21.1",
+    "cypress": "^16.2.0",
     "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-cypress": "^7.0.0",
@@ -63,6 +63,6 @@
   "allowScripts": {
     "msw@3.0.3": true,
     "fsevents@2.3.3": true,
-    "cypress@15.21.1": true
+    "cypress@16.2.0": true
   }
 }
